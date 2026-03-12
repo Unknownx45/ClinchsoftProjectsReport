@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 820" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#5D6D7E"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#C0392B"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#00000033"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="820" fill="#F8F9FA"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="1100" height="52" fill="#1B3A6B"/>
+  <text x="550" y="32" text-anchor="middle" font-size="20" font-weight="bold" fill="white">Apex Solutions — Enterprise Network Topology (Logical Diagram)</text>
+  <text x="550" y="47" text-anchor="middle" font-size="11" fill="#90C0F0">Security Assessment | March 2026 | CONFIDENTIAL</text>
+
+  <!-- ══════ INTERNET ZONE ══════ -->
+  <rect x="430" y="65" width="240" height="90" rx="10" fill="#FDECEA" stroke="#C0392B" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="87" text-anchor="middle" font-size="13" font-weight="bold" fill="#C0392B">🌐  INTERNET</text>
+  <text x="550" y="104" text-anchor="middle" font-size="11" fill="#888">External Users / Attackers</text>
+  <text x="550" y="118" text-anchor="middle" font-size="10" fill="#C0392B">⚠ Untrusted Zone</text>
+
+  <!-- Arrow: Internet → Edge Router -->
+  <line x1="550" y1="155" x2="550" y2="175" stroke="#5D6D7E" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ══════ EDGE ROUTER ══════ -->
+  <rect x="460" y="175" width="180" height="52" rx="8" fill="#2E5FA3" stroke="#1B3A6B" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="197" text-anchor="middle" font-size="12" font-weight="bold" fill="white">🔀  Edge Router</text>
+  <text x="550" y="213" text-anchor="middle" font-size="10" fill="#CCE0FF">203.0.113.1 (Public IP)</text>
+
+  <!-- Arrow: Router → Firewall -->
+  <line x1="550" y1="227" x2="550" y2="250" stroke="#5D6D7E" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ══════ PERIMETER FIREWALL ══════ -->
+  <rect x="440" y="250" width="220" height="58" rx="8" fill="#1B3A6B" stroke="#0D2240" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="274" text-anchor="middle" font-size="13" font-weight="bold" fill="white">🔥  Perimeter Firewall</text>
+  <text x="550" y="291" text-anchor="middle" font-size="10" fill="#90C0F0">Primary security perimeter</text>
+  <text x="550" y="303" text-anchor="middle" font-size="9" fill="#E07070">⚠ Logging disabled on internal IF</text>
+
+  <!-- Firewall branches to DMZ, Core Switch, and Wireless -->
+  <!-- To DMZ -->
+  <line x1="440" y1="279" x2="290" y2="310" stroke="#5D6D7E" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <!-- To Core Switch -->
+  <line x1="550" y1="308" x2="550" y2="345" stroke="#5D6D7E" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- To Wireless Controller -->
+  <line x1="660" y1="279" x2="810" y2="310" stroke="#5D6D7E" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+
+  <!-- ══════ DMZ ZONE ══════ -->
+  <rect x="60" y="290" width="220" height="200" rx="10" fill="#FEF3E2" stroke="#E67E22" stroke-width="2" filter="url(#shadow)"/>
+  <text x="170" y="312" text-anchor="middle" font-size="12" font-weight="bold" fill="#E67E22">⚠  DMZ Zone</text>
+
+  <rect x="80" y="322" width="180" height="38" rx="6" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="170" y="337" text-anchor="middle" font-size="11" font-weight="bold" fill="#C0392B">🌍 Web Server</text>
+  <text x="170" y="351" text-anchor="middle" font-size="10" fill="#888">Port 80/443 — TLS 1.0 still ON</text>
+
+  <rect x="80" y="368" width="180" height="38" rx="6" fill="#FEF3E2" stroke="#E67E22" stroke-width="1.5"/>
+  <text x="170" y="383" text-anchor="middle" font-size="11" font-weight="bold" fill="#E67E22">📧 Email Gateway</text>
+  <text x="170" y="397" text-anchor="middle" font-size="10" fill="#888">Port 25/587/993</text>
+
+  <rect x="80" y="414" width="180" height="38" rx="6" fill="#FEF3E2" stroke="#E67E22" stroke-width="1.5"/>
+  <text x="170" y="430" text-anchor="middle" font-size="11" font-weight="bold" fill="#E67E22">🔐 VPN Endpoint</text>
+  <text x="170" y="444" text-anchor="middle" font-size="10" fill="#C0392B">No MFA enforced ⚠</text>
+
+  <rect x="80" y="460" width="180" height="24" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="170" y="476" text-anchor="middle" font-size="10" fill="#C0392B">Dev Server :8080 — Exposed ⚠⚠</text>
+
+  <!-- ══════ CORE SWITCH ══════ -->
+  <rect x="460" y="345" width="180" height="52" rx="8" fill="#2E5FA3" stroke="#1B3A6B" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="367" text-anchor="middle" font-size="12" font-weight="bold" fill="white">🔌  Core Switch</text>
+  <text x="550" y="384" text-anchor="middle" font-size="10" fill="#CCE0FF">L3 Distribution Layer</text>
+
+  <!-- Core switch to sub-switches -->
+  <line x1="550" y1="397" x2="550" y2="440" stroke="#5D6D7E" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="460" y1="371" x2="360" y2="420" stroke="#5D6D7E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="640" y1="371" x2="720" y2="420" stroke="#5D6D7E" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ══════ SERVER VLAN ══════ -->
+  <rect x="310" y="420" width="200" height="160" rx="10" fill="#D5F0DC" stroke="#27AE60" stroke-width="2" filter="url(#shadow)"/>
+  <text x="410" y="442" text-anchor="middle" font-size="11" font-weight="bold" fill="#1E8449">🖥  Server VLAN</text>
+  <text x="410" y="456" text-anchor="middle" font-size="9" fill="#888">10.10.4.0/24</text>
+
+  <rect x="325" y="464" width="170" height="30" rx="5" fill="white" stroke="#27AE60" stroke-width="1"/>
+  <text x="410" y="484" text-anchor="middle" font-size="10" fill="#1B3A6B">🗄 Domain Controller</text>
+
+  <rect x="325" y="500" width="170" height="30" rx="5" fill="white" stroke="#27AE60" stroke-width="1"/>
+  <text x="410" y="520" text-anchor="middle" font-size="10" fill="#1B3A6B">📁 File Server (FS01)</text>
+
+  <rect x="325" y="536" width="170" height="30" rx="5" fill="white" stroke="#27AE60" stroke-width="1"/>
+  <text x="410" y="556" text-anchor="middle" font-size="10" fill="#C0392B">🗃 Database Server ⚠</text>
+
+  <!-- ══════ CORPORATE LAN VLAN ══════ -->
+  <rect x="450" y="440" width="200" height="155" rx="10" fill="#D6E4F7" stroke="#2E5FA3" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="462" text-anchor="middle" font-size="11" font-weight="bold" fill="#1B3A6B">💻  Corporate LAN</text>
+  <text x="550" y="476" text-anchor="middle" font-size="9" fill="#888">10.10.0.0/22</text>
+
+  <rect x="465" y="484" width="170" height="28" rx="5" fill="white" stroke="#2E5FA3" stroke-width="1"/>
+  <text x="550" y="502" text-anchor="middle" font-size="10" fill="#1B3A6B">🖥 50–100 Workstations</text>
+
+  <rect x="465" y="518" width="170" height="28" rx="5" fill="white" stroke="#2E5FA3" stroke-width="1"/>
+  <text x="550" y="536" text-anchor="middle" font-size="10" fill="#1B3A6B">🖨 Printers / IoT</text>
+
+  <rect x="465" y="552" width="170" height="30" rx="5" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="550" y="572" text-anchor="middle" font-size="10" fill="#C0392B">⚠ SMBv1 Active on LAN</text>
+
+  <!-- ══════ MANAGEMENT VLAN ══════ -->
+  <rect x="660" y="420" width="200" height="100" rx="10" fill="#FEFAE0" stroke="#F1C40F" stroke-width="2" filter="url(#shadow)"/>
+  <text x="760" y="442" text-anchor="middle" font-size="11" font-weight="bold" fill="#7D6608">⚙  Management VLAN</text>
+  <text x="760" y="456" text-anchor="middle" font-size="9" fill="#888">10.10.5.0/24</text>
+
+  <rect x="675" y="464" width="170" height="28" rx="5" fill="white" stroke="#F1C40F" stroke-width="1"/>
+  <text x="760" y="482" text-anchor="middle" font-size="10" fill="#1B3A6B">🔧 Switch / Router Mgmt</text>
+  <rect x="675" y="496" width="170" height="18" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="760" y="509" text-anchor="middle" font-size="9" fill="#C0392B">⚠ ACL Misconfiguration</text>
+
+  <!-- ══════ WIRELESS CONTROLLER ══════ -->
+  <rect x="760" y="290" width="200" height="52" rx="8" fill="#2E5FA3" stroke="#1B3A6B" stroke-width="2" filter="url(#shadow)"/>
+  <text x="860" y="312" text-anchor="middle" font-size="12" font-weight="bold" fill="white">📡  Wireless Controller</text>
+  <text x="860" y="328" text-anchor="middle" font-size="10" fill="#CCE0FF">AP Management</text>
+
+  <!-- Wireless to Employee + Guest SSIDs -->
+  <line x1="860" y1="342" x2="800" y2="560" stroke="#5D6D7E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="860" y1="342" x2="970" y2="560" stroke="#5D6D7E" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ══════ EMPLOYEE WI-FI ══════ -->
+  <rect x="700" y="560" width="200" height="110" rx="10" fill="#D6E4F7" stroke="#2E5FA3" stroke-width="2" filter="url(#shadow)"/>
+  <text x="800" y="581" text-anchor="middle" font-size="11" font-weight="bold" fill="#1B3A6B">📶 Employee Wi-Fi</text>
+  <text x="800" y="595" text-anchor="middle" font-size="9" fill="#888">192.168.1.0/24 — SSID: CorpNet</text>
+  <rect x="715" y="603" width="170" height="24" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="800" y="619" text-anchor="middle" font-size="10" fill="#C0392B">WPA2-PSK (No 802.1X) ⚠</text>
+  <rect x="715" y="633" width="170" height="24" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="800" y="649" text-anchor="middle" font-size="10" fill="#C0392B">No WIPS Deployed ⚠</text>
+
+  <!-- ══════ GUEST WI-FI ══════ -->
+  <rect x="920" y="560" width="160" height="110" rx="10" fill="#EEF4FC" stroke="#5D6D7E" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1000" y="581" text-anchor="middle" font-size="11" font-weight="bold" fill="#5D6D7E">📶 Guest Wi-Fi</text>
+  <text x="1000" y="595" text-anchor="middle" font-size="9" fill="#888">192.168.2.0/24</text>
+  <rect x="935" y="603" width="130" height="24" rx="4" fill="#FDECEA" stroke="#C0392B" stroke-width="1"/>
+  <text x="1000" y="619" text-anchor="middle" font-size="10" fill="#C0392B">No isolation ⚠</text>
+  <rect x="935" y="633" width="130" height="24" rx="4" fill="#FDECEA" stroke="#E67E22" stroke-width="1"/>
+  <text x="1000" y="649" text-anchor="middle" font-size="10" fill="#E67E22">Routing leak ⚠</text>
+
+  <!-- ══════ LEGEND ══════ -->
+  <rect x="60" y="690" width="980" height="120" rx="8" fill="white" stroke="#BDC3C7" stroke-width="1.5"/>
+  <text x="80" y="710" font-size="12" font-weight="bold" fill="#1B3A6B">Legend</text>
+
+  <rect x="80" y="720" width="16" height="16" fill="#D6E4F7" stroke="#2E5FA3" stroke-width="1.5"/>
+  <text x="103" y="733" font-size="11" fill="#333">Internal Network Zone</text>
+
+  <rect x="220" y="720" width="16" height="16" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="243" y="733" font-size="11" fill="#333">Critical Risk / Vulnerability</text>
+
+  <rect x="400" y="720" width="16" height="16" fill="#FEF3E2" stroke="#E67E22" stroke-width="1.5"/>
+  <text x="423" y="733" font-size="11" fill="#333">High Risk Finding</text>
+
+  <rect x="560" y="720" width="16" height="16" fill="#D5F0DC" stroke="#27AE60" stroke-width="1.5"/>
+  <text x="583" y="733" font-size="11" fill="#333">Secure / Monitored</text>
+
+  <line x1="730" y1="728" x2="760" y2="728" stroke="#5D6D7E" stroke-width="2"/>
+  <text x="767" y="733" font-size="11" fill="#333">Network Link</text>
+
+  <line x1="850" y1="728" x2="880" y2="728" stroke="#5D6D7E" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="887" y="733" font-size="11" fill="#333">DMZ / Isolated Link</text>
+
+  <text x="80" y="760" font-size="11" fill="#C0392B" font-weight="bold">⚠ Key Vulnerabilities: </text>
+  <text x="210" y="760" font-size="11" fill="#555">RDP 3389 exposed to internet  |  SMBv1 active  |  No MFA on VPN  |  Flat LAN (east-west unrestricted)  |  No SIEM / monitoring</text>
+  <text x="80" y="778" font-size="11" fill="#E67E22" font-weight="bold">⚠ Wi-Fi Issues: </text>
+  <text x="163" y="778" font-size="11" fill="#555">WPA2-PSK (no 802.1X)  |  No WIPS  |  Guest VLAN routing leak  |  Management interface reachable from employee Wi-Fi</text>
+  <text x="80" y="796" font-size="10" fill="#999" font-style="italic">This diagram is illustrative and based on passive assessment findings. Actual IP ranges may differ. Not to scale.</text>
+
+</svg>

@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 980" font-family="Arial, sans-serif">
+  <defs>
+    <filter id="sh"><feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#00000025"/></filter>
+    <marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#1A4A6E"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="980" fill="#0D1B2A"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="64" fill="#0D2B45"/>
+  <rect x="0" y="62" width="1200" height="3" fill="#1F6FA0"/>
+  <text x="600" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="white">Incident INC-2026-0312 — Attack Timeline &amp; SOC Response</text>
+  <text x="600" y="54" text-anchor="middle" font-size="12" fill="#90C0F0">NovaTech Systems Ltd.  |  March 12, 2026  |  Multi-Vector Cyber Attack  |  CONFIDENTIAL</text>
+
+  <!-- Phase legend -->
+  <rect x="30" y="74" width="1140" height="34" rx="5" fill="#0D2B45" stroke="#1A4A6E" stroke-width="1"/>
+  <rect x="50"  y="83" width="14" height="14" rx="2" fill="#C0392B"/><text x="70"  y="95" font-size="11" fill="#ccc">Attack Phase</text>
+  <rect x="180" y="83" width="14" height="14" rx="2" fill="#E67E22"/><text x="200" y="95" font-size="11" fill="#ccc">Escalation</text>
+  <rect x="310" y="83" width="14" height="14" rx="2" fill="#F1C40F"/><text x="330" y="95" font-size="11" fill="#ccc">Detection</text>
+  <rect x="430" y="83" width="14" height="14" rx="2" fill="#1F6FA0"/><text x="450" y="95" font-size="11" fill="#ccc">SOC Response</text>
+  <rect x="580" y="83" width="14" height="14" rx="2" fill="#1A5E20"/><text x="600" y="95" font-size="11" fill="#ccc">Containment</text>
+  <rect x="720" y="83" width="14" height="14" rx="2" fill="#148F77"/><text x="740" y="95" font-size="11" fill="#ccc">Eradication</text>
+  <rect x="860" y="83" width="14" height="14" rx="2" fill="#512E5F"/><text x="880" y="95" font-size="11" fill="#ccc">Recovery</text>
+
+  <!-- ══ TIMELINE AXIS ══ -->
+  <!-- Vertical spine -->
+  <line x1="230" y1="120" x2="230" y2="940" stroke="#1A4A6E" stroke-width="2"/>
+  <line x1="230" y1="940" x2="230" y2="950" stroke="#1A4A6E" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Time labels axis header -->
+  <text x="120" y="116" text-anchor="middle" font-size="12" font-weight="bold" fill="#90C0F0">TIME (UTC)</text>
+  <text x="480" y="116" text-anchor="middle" font-size="12" font-weight="bold" fill="#90C0F0">EVENT</text>
+  <text x="950" y="116" text-anchor="middle" font-size="12" font-weight="bold" fill="#90C0F0">MITRE ATT&amp;CK / PHASE</text>
+
+  <!-- ══ EVENTS ══ -->
+  <!-- Each event: circle on spine + time label left + card right -->
+  <!-- [y, time, label, detail, color, mitre, phase_label] -->
+
+  <!-- 01:00 — Recon -->
+  <line x1="30" y1="148" x2="226" y2="148" stroke="#C0392B" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="230" cy="148" r="9" fill="#C0392B" stroke="#FF6B6B" stroke-width="2"/>
+  <text x="215" y="144" text-anchor="end" font-size="13" font-weight="bold" fill="#FF9999">~01:00</text>
+  <rect x="248" y="130" width="680" height="36" rx="5" fill="#2C1810" stroke="#C0392B" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="262" y="145" font-size="12" font-weight="bold" fill="#FF9999">RECONNAISSANCE</text>
+  <text x="262" y="160" font-size="11" fill="#ccc">Attacker scans public IP range; identifies VPN gateway on 203.0.113.10:443</text>
+  <rect x="940" y="133" width="220" height="30" rx="4" fill="#3D1515" stroke="#C0392B" stroke-width="1"/>
+  <text x="1050" y="153" text-anchor="middle" font-size="11" fill="#FF9999">T1595 — Active Scanning</text>
+
+  <!-- 02:47 — Brute Force -->
+  <line x1="30" y1="210" x2="226" y2="210" stroke="#C0392B" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="230" cy="210" r="11" fill="#C0392B" stroke="#FF4444" stroke-width="2"/>
+  <text x="215" y="206" text-anchor="end" font-size="13" font-weight="bold" fill="#FF6666">02:47</text>
+  <rect x="248" y="191" width="680" height="38" rx="5" fill="#3D1515" stroke="#C0392B" stroke-width="2" filter="url(#sh)"/>
+  <text x="262" y="207" font-size="12" font-weight="bold" fill="#FF4444">🔴 BRUTE FORCE BEGINS</text>
+  <text x="262" y="222" font-size="11" fill="#ccc">1,247 credential stuffing attempts in 8 min from TOR node 185.220.101.47</text>
+  <rect x="940" y="194" width="220" height="30" rx="4" fill="#3D1515" stroke="#C0392B" stroke-width="1"/>
+  <text x="1050" y="214" text-anchor="middle" font-size="11" fill="#FF9999">T1110.001 — Password Spraying</text>
+
+  <!-- 02:47 — SIEM ALERT -->
+  <circle cx="230" cy="258" r="9" fill="#F1C40F" stroke="#FFE066" stroke-width="2"/>
+  <text x="215" y="254" text-anchor="end" font-size="13" font-weight="bold" fill="#FFE066">02:47</text>
+  <rect x="248" y="241" width="680" height="34" rx="5" fill="#2A2500" stroke="#F1C40F" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="262" y="256" font-size="12" font-weight="bold" fill="#FFE066">⚡ ALERT ALT-001 TRIGGERED — SIEM</text>
+  <text x="262" y="270" font-size="11" fill="#ccc">1,247 failed auth alerts correlated; SOC analyst paged</text>
+  <rect x="940" y="244" width="220" height="30" rx="4" fill="#2A2500" stroke="#F1C40F" stroke-width="1"/>
+  <text x="1050" y="264" text-anchor="middle" font-size="11" fill="#FFE066">DETECTION</text>
+
+  <!-- 02:55 — VPN Access -->
+  <line x1="30" y1="308" x2="226" y2="308" stroke="#C0392B" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="230" cy="308" r="11" fill="#C0392B" stroke="#FF4444" stroke-width="2"/>
+  <text x="215" y="304" text-anchor="end" font-size="13" font-weight="bold" fill="#FF6666">02:55</text>
+  <rect x="248" y="289" width="680" height="38" rx="5" fill="#3D1515" stroke="#C0392B" stroke-width="2" filter="url(#sh)"/>
+  <text x="262" y="305" font-size="12" font-weight="bold" fill="#FF4444">🔴 VPN BREACH — j.mehta COMPROMISED</text>
+  <text x="262" y="320" font-size="11" fill="#ccc">Attacker authenticates successfully; VPN session from TOR 185.220.101.47 established</text>
+  <rect x="940" y="292" width="220" height="30" rx="4" fill="#3D1515" stroke="#C0392B" stroke-width="1"/>
+  <text x="1050" y="312" text-anchor="middle" font-size="11" fill="#FF9999">T1133 — External Remote Services</text>
+
+  <!-- 03:12 — Malware Execution -->
+  <line x1="30" y1="362" x2="226" y2="362" stroke="#E67E22" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="230" cy="362" r="11" fill="#E67E22" stroke="#FFB347" stroke-width="2"/>
+  <text x="215" y="358" text-anchor="end" font-size="13" font-weight="bold" fill="#FFB347">03:12</text>
+  <rect x="248" y="344" width="680" height="36" rx="5" fill="#2A1800" stroke="#E67E22" stroke-width="2" filter="url(#sh)"/>
+  <text x="262" y="359" font-size="12" font-weight="bold" fill="#FFB347">🟠 MALWARE EXECUTES — WIN-WS-047</text>
+  <text x="262" y="374" font-size="11" fill="#ccc">AgentTesla dropper from email attachment; PowerShell encoded C2 loader spawned</text>
+  <rect x="940" y="347" width="220" height="30" rx="4" fill="#2A1800" stroke="#E67E22" stroke-width="1"/>
+  <text x="1050" y="367" text-anchor="middle" font-size="11" fill="#FFB347">T1059.001 — PowerShell</text>
+
+  <!-- 03:12 — EDR Alert -->
+  <circle cx="230" cy="406" r="9" fill="#F1C40F" stroke="#FFE066" stroke-width="2"/>
+  <text x="215" y="402" text-anchor="end" font-size="13" font-weight="bold" fill="#FFE066">03:12</text>
+  <rect x="248" y="390" width="680" height="32" rx="5" fill="#2A2500" stroke="#F1C40F" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="262" y="403" font-size="12" font-weight="bold" fill="#FFE066">⚡ ALERT ALT-002 — CrowdStrike Falcon EDR</text>
+  <text x="262" y="418" font-size="11" fill="#ccc">Malware SHA256: a3f8c9d1... quarantine attempted; process injection already active</text>
+  <rect x="940" y="393" width="220" height="30" rx="4" fill="#2A2500" stroke="#F1C40F" stroke-width="1"/>
+  <text x="1050" y="413" text-anchor="middle" font-size="11" fill="#FFE066">DETECTION — EDR</text>
+
+  <!-- 03:18 — C2 Beacon -->
+  <circle cx="230" cy="450" r="10" fill="#E67E22" stroke="#FFB347" stroke-width="2"/>
+  <text x="215" y="446" text-anchor="end" font-size="13" font-weight="bold" fill="#FFB347">03:18</text>
+  <rect x="248" y="434" width="680" height="34" rx="5" fill="#2A1800" stroke="#E67E22" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="262" y="449" font-size="12" font-weight="bold" fill="#FFB347">🟠 C2 BEACON — 91.108.56.182 (Russia)</text>
+  <text x="262" y="464" font-size="11" fill="#ccc">Encrypted HTTPS beacon every 30s; ALT-003 (Suricata ET TROJAN rule) fires</text>
+  <rect x="940" y="437" width="220" height="30" rx="4" fill="#2A1800" stroke="#E67E22" stroke-width="1"/>
+  <text x="1050" y="457" text-anchor="middle" font-size="11" fill="#FFB347">T1071.001 — Web Protocols</text>
+
+  <!-- 03:22 — SOC Isolation -->
+  <circle cx="230" cy="498" r="12" fill="#1F6FA0" stroke="#5DADE2" stroke-width="2"/>
+  <text x="215" y="494" text-anchor="end" font-size="13" font-weight="bold" fill="#5DADE2">03:22</text>
+  <rect x="248" y="480" width="680" height="36" rx="5" fill="#0A1A2E" stroke="#1F6FA0" stroke-width="2" filter="url(#sh)"/>
+  <text x="262" y="495" font-size="12" font-weight="bold" fill="#5DADE2">🔵 SOC RESPONSE — HOST ISOLATION</text>
+  <text x="262" y="510" font-size="11" fill="#ccc">WIN-WS-047 moved to quarantine VLAN 999; j.mehta AD account disabled</text>
+  <rect x="940" y="483" width="220" height="30" rx="4" fill="#0A1A2E" stroke="#1F6FA0" stroke-width="1"/>
+  <text x="1050" y="503" text-anchor="middle" font-size="11" fill="#5DADE2">SOC RESPONSE — T+35min</text>
+
+  <!-- 03:25 — C2 Blocked -->
+  <circle cx="230" cy="543" r="10" fill="#1A5E20" stroke="#58D68D" stroke-width="2"/>
+  <text x="215" y="539" text-anchor="end" font-size="13" font-weight="bold" fill="#58D68D">03:25</text>
+  <rect x="248" y="527" width="680" height="32" rx="5" fill="#0A2010" stroke="#1A5E20" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="262" y="542" font-size="12" font-weight="bold" fill="#58D68D">✅ C2 COMMUNICATION SEVERED</text>
+  <text x="262" y="557" font-size="11" fill="#ccc">Firewall rule blocks 91.108.56.182; attacker loses shell on WIN-WS-047</text>
+  <rect x="940" y="530" width="220" height="30" rx="4" fill="#0A2010" stroke="#1A5E20" stroke-width="1"/>
+  <text x="1050" y="550" text-anchor="middle" font-size="11" fill="#58D68D">CONTAINMENT</text>
+
+  <!-- 03:44 — Lateral Movement -->
+  <circle cx="230" cy="590" r="9" fill="#E67E22" stroke="#FFB347" stroke-width="2"/>
+  <text x="215" y="586" text-anchor="end" font-size="13" font-weight="bold" fill="#FFB347">03:44</text>
+  <rect x="248" y="574" width="680" height="32" rx="5" fill="#2A1800" stroke="#E67E22" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="262" y="589" font-size="12" font-weight="bold" fill="#FFB347">⚠  LATERAL MOVEMENT + CRED THEFT — WIN-WS-061</text>
+  <text x="262" y="604" font-size="11" fill="#ccc">admin-svc credentials harvested; WIN-WS-061 accessed; ALT-005 &amp; ALT-006 fire</text>
+  <rect x="940" y="577" width="220" height="30" rx="4" fill="#2A1800" stroke="#E67E22" stroke-width="1"/>
+  <text x="1050" y="597" text-anchor="middle" font-size="11" fill="#FFB347">T1021.002 + T1003.001</text>
+
+  <!-- 04:02 — Exfil Attempt -->
+  <circle cx="230" cy="638" r="11" fill="#C0392B" stroke="#FF6B6B" stroke-width="2"/>
+  <text x="215" y="634" text-anchor="end" font-size="13" font-weight="bold" fill="#FF9999">04:02</text>
+  <rect x="248" y="621" width="680" height="34" rx="5" fill="#3D1515" stroke="#C0392B" stroke-width="2" filter="url(#sh)"/>
+  <text x="262" y="636" font-size="12" font-weight="bold" fill="#FF6666">🔴 EXFILTRATION ATTEMPT — 240MB</text>
+  <text x="262" y="651" font-size="11" fill="#ccc">Compressed archive uploaded from WIN-WS-061; DLP volume alert ALT-006 raised</text>
+  <rect x="940" y="624" width="220" height="30" rx="4" fill="#3D1515" stroke="#C0392B" stroke-width="1"/>
+  <text x="1050" y="644" text-anchor="middle" font-size="11" fill="#FF9999">T1048 — Exfiltration over HTTPS</text>
+
+  <!-- 04:30 — Full Containment -->
+  <circle cx="230" cy="690" r="12" fill="#1A5E20" stroke="#58D68D" stroke-width="2"/>
+  <text x="215" y="686" text-anchor="end" font-size="13" font-weight="bold" fill="#58D68D">04:30</text>
+  <rect x="248" y="672" width="680" height="36" rx="5" fill="#0A2010" stroke="#1A5E20" stroke-width="2" filter="url(#sh)"/>
+  <text x="262" y="687" font-size="12" font-weight="bold" fill="#58D68D">✅ FULL CONTAINMENT ACHIEVED</text>
+  <text x="262" y="702" font-size="11" fill="#ccc">Both hosts isolated; all attacker paths severed; attacker loses complete foothold</text>
+  <rect x="940" y="675" width="220" height="30" rx="4" fill="#0A2010" stroke="#1A5E20" stroke-width="1"/>
+  <text x="1050" y="695" text-anchor="middle" font-size="11" fill="#58D68D">CONTAINMENT — T+6h42m</text>
+
+  <!-- 09:29 — Eradication -->
+  <circle cx="230" cy="745" r="11" fill="#148F77" stroke="#1ABC9C" stroke-width="2"/>
+  <text x="215" y="741" text-anchor="end" font-size="13" font-weight="bold" fill="#1ABC9C">09:29</text>
+  <rect x="248" y="728" width="680" height="34" rx="5" fill="#0A1E1A" stroke="#148F77" stroke-width="2" filter="url(#sh)"/>
+  <text x="262" y="743" font-size="12" font-weight="bold" fill="#1ABC9C">🧹 ERADICATION — SYSTEMS REIMAGED</text>
+  <text x="262" y="758" font-size="11" fill="#ccc">WIN-WS-047 &amp; WIN-WS-061 fully reimaged; all malware artifacts confirmed removed</text>
+  <rect x="940" y="731" width="220" height="30" rx="4" fill="#0A1E1A" stroke="#148F77" stroke-width="1"/>
+  <text x="1050" y="751" text-anchor="middle" font-size="11" fill="#1ABC9C">ERADICATION — T+6h42m</text>
+
+  <!-- 12:00 — VPN MFA -->
+  <circle cx="230" cy="796" r="10" fill="#512E5F" stroke="#9B59B6" stroke-width="2"/>
+  <text x="215" y="792" text-anchor="end" font-size="13" font-weight="bold" fill="#BB8FCE">12:00</text>
+  <rect x="248" y="780" width="680" height="32" rx="5" fill="#1A0E20" stroke="#512E5F" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="262" y="795" font-size="12" font-weight="bold" fill="#BB8FCE">🔐 VPN RESTORED WITH MFA ENFORCED</text>
+  <text x="262" y="810" font-size="11" fill="#ccc">Azure AD MFA + conditional access policy live; all staff re-authenticated</text>
+  <rect x="940" y="783" width="220" height="30" rx="4" fill="#1A0E20" stroke="#512E5F" stroke-width="1"/>
+  <text x="1050" y="803" text-anchor="middle" font-size="11" fill="#BB8FCE">RECOVERY</text>
+
+  <!-- 21:15 — Closed -->
+  <circle cx="230" cy="848" r="12" fill="#148F77" stroke="#1ABC9C" stroke-width="3"/>
+  <text x="215" y="844" text-anchor="end" font-size="13" font-weight="bold" fill="#1ABC9C">21:15</text>
+  <rect x="248" y="830" width="680" height="36" rx="5" fill="#0A1E1A" stroke="#1ABC9C" stroke-width="2" filter="url(#sh)"/>
+  <text x="262" y="845" font-size="12" font-weight="bold" fill="#1ABC9C">✅ INCIDENT CLOSED — INC-2026-0312</text>
+  <text x="262" y="860" font-size="11" fill="#ccc">Full environment health verified; 72-hour enhanced monitoring activated; report finalized</text>
+  <rect x="940" y="833" width="220" height="30" rx="4" fill="#0A1E1A" stroke="#1ABC9C" stroke-width="1"/>
+  <text x="1050" y="853" text-anchor="middle" font-size="11" fill="#1ABC9C">RESOLVED — T+18h28m</text>
+
+  <!-- Duration annotations -->
+  <!-- Dwell time bracket -->
+  <line x1="12" y1="308" x2="12" y2="690" stroke="#C0392B" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="8"  y1="308" x2="16" y2="308" stroke="#C0392B" stroke-width="1.5"/>
+  <line x1="8"  y1="690" x2="16" y2="690" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="10" y="502" text-anchor="middle" font-size="10" fill="#FF9999" transform="rotate(-90,10,502)">DWELL TIME ~1h35m</text>
+
+  <!-- Response bracket -->
+  <line x1="24" y1="258" x2="24" y2="690" stroke="#1F6FA0" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="20" y1="258" x2="28" y2="258" stroke="#1F6FA0" stroke-width="1.5"/>
+  <line x1="20" y1="690" x2="28" y2="690" stroke="#1F6FA0" stroke-width="1.5"/>
+  <text x="22" y="478" text-anchor="middle" font-size="10" fill="#5DADE2" transform="rotate(-90,22,478)">RESPONSE TIME: 6h42m</text>
+
+  <!-- Summary footer bar -->
+  <rect x="30" y="890" width="1140" height="72" rx="6" fill="#0D2B45" stroke="#1A4A6E" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="50"  y="910" font-size="12" font-weight="bold" fill="#90C0F0">Key Metrics</text>
+  <text x="50"  y="928" font-size="11" fill="#ccc">First Alert:    02:47 UTC</text>
+  <text x="50"  y="944" font-size="11" fill="#ccc">Incident Start: 02:55 UTC</text>
+  <text x="260" y="910" font-size="12" font-weight="bold" fill="#F1C40F">Detection</text>
+  <text x="260" y="928" font-size="11" fill="#ccc">ALT-001 → ALT-007</text>
+  <text x="260" y="944" font-size="11" fill="#ccc">SIEM + EDR + IDS</text>
+  <text x="460" y="910" font-size="12" font-weight="bold" fill="#1F6FA0">Response Time</text>
+  <text x="460" y="928" font-size="11" fill="#ccc">Detection to Containment:</text>
+  <text x="460" y="944" font-size="11" fill="#5DADE2">6 hours 42 minutes</text>
+  <text x="660" y="910" font-size="12" font-weight="bold" fill="#148F77">Resolution</text>
+  <text x="660" y="928" font-size="11" fill="#ccc">Systems Restored:</text>
+  <text x="660" y="944" font-size="11" fill="#1ABC9C">18 hours 28 minutes</text>
+  <text x="860" y="910" font-size="12" font-weight="bold" fill="#C0392B">Impact</text>
+  <text x="860" y="928" font-size="11" fill="#ccc">2 hosts · 2 accounts · 240MB at risk</text>
+  <text x="860" y="944" font-size="11" fill="#58D68D">No confirmed data loss</text>
+</svg>

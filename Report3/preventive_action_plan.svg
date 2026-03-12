@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1160" font-family="Arial, sans-serif">
+  <defs>
+    <filter id="sh"><feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#00000022"/></filter>
+  </defs>
+
+  <rect width="1200" height="1160" fill="#F4F6F9"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="64" fill="#0D2B45"/>
+  <text x="600" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="white">Post-Incident Preventive Action Plan — INC-2026-0312</text>
+  <text x="600" y="54" text-anchor="middle" font-size="12" fill="#90C0F0">NovaTech Systems Ltd.  |  March 2026  |  10 Controls · 4 Priority Tiers · Implementation Roadmap</text>
+
+  <!-- Priority legend -->
+  <rect x="30" y="74" width="1140" height="38" rx="5" fill="white" stroke="#BDC3C7" stroke-width="1" filter="url(#sh)"/>
+  <text x="50" y="97" font-size="12" font-weight="bold" fill="#0D2B45">Priority: </text>
+  <rect x="130" y="83" width="14" height="14" rx="2" fill="#C0392B"/><text x="150" y="97" font-size="11" fill="#333">P1 — CRITICAL (Immediate)</text>
+  <rect x="340" y="83" width="14" height="14" rx="2" fill="#E67E22"/><text x="360" y="97" font-size="11" fill="#333">P2 — HIGH (Week 1)</text>
+  <rect x="510" y="83" width="14" height="14" rx="2" fill="#B7950B"/><text x="530" y="97" font-size="11" fill="#333">P3 — MEDIUM (Month 1)</text>
+  <rect x="710" y="83" width="14" height="14" rx="2" fill="#1E8449"/><text x="730" y="97" font-size="11" fill="#333">P4 — ONGOING</text>
+  <text x="860" y="97" font-size="11" fill="#888">  |  Root cause: MFA gap · Weak creds · No email sandbox · Excessive privileges · Flat LAN</text>
+
+  <!-- TABLE HEADER -->
+  <rect x="30" y="122" width="1140" height="34" rx="0" fill="#0D2B45"/>
+  <text x="50"  y="144" font-size="12" font-weight="bold" fill="white">#</text>
+  <text x="80"  y="144" font-size="12" font-weight="bold" fill="white">Control / Action</text>
+  <text x="360" y="144" font-size="12" font-weight="bold" fill="white">Priority</text>
+  <text x="460" y="144" font-size="12" font-weight="bold" fill="white">Deadline</text>
+  <text x="590" y="144" font-size="12" font-weight="bold" fill="white">Owner</text>
+  <text x="730" y="144" font-size="12" font-weight="bold" fill="white">Root Cause Addressed</text>
+  <text x="1010" y="144" font-size="12" font-weight="bold" fill="white">Status</text>
+  <!-- col dividers -->
+  <line x1="72"  y1="122" x2="72"  y2="156" stroke="#1A4A6E" stroke-width="1"/>
+  <line x1="355" y1="122" x2="355" y2="156" stroke="#1A4A6E" stroke-width="1"/>
+  <line x1="455" y1="122" x2="455" y2="156" stroke="#1A4A6E" stroke-width="1"/>
+  <line x1="585" y1="122" x2="585" y2="156" stroke="#1A4A6E" stroke-width="1"/>
+  <line x1="725" y1="122" x2="725" y2="156" stroke="#1A4A6E" stroke-width="1"/>
+  <line x1="1005" y1="122" x2="1005" y2="156" stroke="#1A4A6E" stroke-width="1"/>
+
+  <!-- ══ ROWS ══ Row height 68px, start y=156 -->
+
+  <!-- Row 1 — MFA on VPN -->
+  <rect x="30" y="156" width="1140" height="66" fill="#FDECEA"/>
+  <line x1="30" y1="222" x2="1170" y2="222" stroke="#F5B7B1" stroke-width="1"/>
+  <text x="50" y="181" font-size="13" font-weight="bold" fill="#C0392B">01</text>
+  <text x="80" y="176" font-size="12" font-weight="bold" fill="#17202A">Enforce MFA on VPN &amp; All Remote Access</text>
+  <text x="80" y="193" font-size="11" fill="#555">Deploy Azure AD MFA + FIDO2/TOTP; conditional access</text>
+  <text x="80" y="208" font-size="11" fill="#555">policy requiring MFA for all off-network authentication</text>
+  <rect x="359" y="163" width="90" height="22" rx="4" fill="#C0392B"/>
+  <text x="404" y="179" text-anchor="middle" font-size="11" font-weight="bold" fill="white">P1 — CRIT</text>
+  <text x="462" y="183" font-size="11" fill="#C0392B" font-weight="bold">48 hours</text>
+  <text x="592" y="183" font-size="11" fill="#17202A">IT Security Team</text>
+  <text x="732" y="176" font-size="11" fill="#17202A">No MFA on VPN gateway</text>
+  <text x="732" y="192" font-size="11" fill="#C0392B">(Primary root cause)</text>
+  <rect x="1009" y="163" width="120" height="22" rx="4" fill="#FEF3E2" stroke="#E67E22" stroke-width="1"/>
+  <text x="1069" y="179" text-anchor="middle" font-size="11" fill="#E67E22" font-weight="bold">IN PROGRESS</text>
+
+  <!-- Row 2 — Email Sandbox -->
+  <rect x="30" y="222" width="1140" height="66" fill="white"/>
+  <line x1="30" y1="288" x2="1170" y2="288" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="247" font-size="13" font-weight="bold" fill="#C0392B">02</text>
+  <text x="80" y="242" font-size="12" font-weight="bold" fill="#17202A">Deploy Email Attachment Sandboxing</text>
+  <text x="80" y="259" font-size="11" fill="#555">Enable Microsoft Defender ATP or Proofpoint sandbox;</text>
+  <text x="80" y="274" font-size="11" fill="#555">detonate all executable &amp; macro-enabled attachments before delivery</text>
+  <rect x="359" y="229" width="90" height="22" rx="4" fill="#C0392B"/>
+  <text x="404" y="245" text-anchor="middle" font-size="11" font-weight="bold" fill="white">P1 — CRIT</text>
+  <text x="462" y="249" font-size="11" fill="#C0392B" font-weight="bold">48 hours</text>
+  <text x="592" y="249" font-size="11" fill="#17202A">Email / SecOps Team</text>
+  <text x="732" y="242" font-size="11" fill="#17202A">No email attachment sandboxing</text>
+  <text x="732" y="258" font-size="11" fill="#555">Dropper reached inbox unchecked</text>
+  <rect x="1009" y="229" width="120" height="22" rx="4" fill="#FEF3E2" stroke="#E67E22" stroke-width="1"/>
+  <text x="1069" y="245" text-anchor="middle" font-size="11" fill="#E67E22" font-weight="bold">IN PROGRESS</text>
+
+  <!-- Row 3 — EDR Auto-update -->
+  <rect x="30" y="288" width="1140" height="66" fill="#FDECEA"/>
+  <line x1="30" y1="354" x2="1170" y2="354" stroke="#F5B7B1" stroke-width="1"/>
+  <text x="50" y="313" font-size="13" font-weight="bold" fill="#C0392B">03</text>
+  <text x="80" y="308" font-size="12" font-weight="bold" fill="#17202A">EDR Signature Auto-Update Policy</text>
+  <text x="80" y="325" font-size="11" fill="#555">Configure CrowdStrike to auto-update every 4 hours;</text>
+  <text x="80" y="340" font-size="11" fill="#555">alert SOC if any endpoint signature is &gt;24h behind</text>
+  <rect x="359" y="295" width="90" height="22" rx="4" fill="#C0392B"/>
+  <text x="404" y="311" text-anchor="middle" font-size="11" font-weight="bold" fill="white">P1 — CRIT</text>
+  <text x="462" y="315" font-size="11" fill="#C0392B" font-weight="bold">24 hours</text>
+  <text x="592" y="315" font-size="11" fill="#17202A">Endpoint Team</text>
+  <text x="732" y="308" font-size="11" fill="#17202A">Signatures 11 days behind</text>
+  <text x="732" y="324" font-size="11" fill="#555">Dropper bypassed AV for 2 minutes</text>
+  <rect x="1009" y="295" width="120" height="22" rx="4" fill="#D5F5E3" stroke="#1E8449" stroke-width="1"/>
+  <text x="1069" y="311" text-anchor="middle" font-size="11" fill="#1E8449" font-weight="bold">COMPLETE</text>
+
+  <!-- Row 4 — Revoke over-privileged accounts -->
+  <rect x="30" y="354" width="1140" height="66" fill="white"/>
+  <line x1="30" y1="420" x2="1170" y2="420" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="379" font-size="13" font-weight="bold" fill="#E67E22">04</text>
+  <text x="80" y="374" font-size="12" font-weight="bold" fill="#17202A">Revoke Excessive Privilege — Service Accounts</text>
+  <text x="80" y="391" font-size="11" fill="#555">Audit all service accounts; remove domain admin rights;</text>
+  <text x="80" y="406" font-size="11" fill="#555">implement least-privilege; replace shared service accounts with per-app accounts</text>
+  <rect x="359" y="361" width="80" height="22" rx="4" fill="#E67E22"/>
+  <text x="399" y="377" text-anchor="middle" font-size="11" font-weight="bold" fill="white">P2 — HIGH</text>
+  <text x="462" y="381" font-size="11" fill="#E67E22" font-weight="bold">Week 1</text>
+  <text x="592" y="381" font-size="11" fill="#17202A">IAM / Identity Team</text>
+  <text x="732" y="374" font-size="11" fill="#17202A">admin-svc had Domain Admin rights</text>
+  <text x="732" y="390" font-size="11" fill="#555">Lateral movement was trivially easy</text>
+  <rect x="1009" y="361" width="120" height="22" rx="4" fill="#FEF3E2" stroke="#E67E22" stroke-width="1"/>
+  <text x="1069" y="377" text-anchor="middle" font-size="11" fill="#E67E22" font-weight="bold">PENDING</text>
+
+  <!-- Row 5 — Network Segmentation -->
+  <rect x="30" y="420" width="1140" height="66" fill="#EBF5FB"/>
+  <line x1="30" y1="486" x2="1170" y2="486" stroke="#D6EAF8" stroke-width="1"/>
+  <text x="50" y="445" font-size="13" font-weight="bold" fill="#E67E22">05</text>
+  <text x="80" y="440" font-size="12" font-weight="bold" fill="#17202A">Network Micro-Segmentation</text>
+  <text x="80" y="457" font-size="11" fill="#555">Deploy workstation VLAN isolation; workstations cannot reach</text>
+  <text x="80" y="472" font-size="11" fill="#555">each other directly; all inter-segment routing via firewall ACLs</text>
+  <rect x="359" y="427" width="80" height="22" rx="4" fill="#E67E22"/>
+  <text x="399" y="443" text-anchor="middle" font-size="11" font-weight="bold" fill="white">P2 — HIGH</text>
+  <text x="462" y="447" font-size="11" fill="#E67E22" font-weight="bold">Week 1–2</text>
+  <text x="592" y="447" font-size="11" fill="#17202A">Network Team</text>
+  <text x="732" y="440" font-size="11" fill="#17202A">Flat LAN — no east-west controls</text>
+  <text x="732" y="456" font-size="11" fill="#555">Single host scanned entire /24 subnet</text>
+  <rect x="1009" y="427" width="120" height="22" rx="4" fill="#FEF9E7" stroke="#B7950B" stroke-width="1"/>
+  <text x="1069" y="443" text-anchor="middle" font-size="11" fill="#B7950B" font-weight="bold">PLANNED</text>
+
+  <!-- Row 6 — HTTPS DPI / SSL Inspection -->
+  <rect x="30" y="486" width="1140" height="66" fill="white"/>
+  <line x1="30" y1="552" x2="1170" y2="552" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="511" font-size="13" font-weight="bold" fill="#E67E22">06</text>
+  <text x="80" y="506" font-size="12" font-weight="bold" fill="#17202A">Outbound HTTPS Inspection (SSL/TLS DPI)</text>
+  <text x="80" y="523" font-size="11" fill="#555">Deploy SSL inspection at proxy for all outbound HTTPS;</text>
+  <text x="80" y="538" font-size="11" fill="#555">enables content-aware DLP to detect exfiltration, not just volume</text>
+  <rect x="359" y="493" width="80" height="22" rx="4" fill="#E67E22"/>
+  <text x="399" y="509" text-anchor="middle" font-size="11" font-weight="bold" fill="white">P2 — HIGH</text>
+  <text x="462" y="513" font-size="11" fill="#E67E22" font-weight="bold">Week 2</text>
+  <text x="592" y="513" font-size="11" fill="#17202A">Network / SecOps</text>
+  <text x="732" y="506" font-size="11" fill="#17202A">DLP blind to encrypted exfiltration</text>
+  <text x="732" y="522" font-size="11" fill="#555">Upload extent (240MB) unconfirmed</text>
+  <rect x="1009" y="493" width="120" height="22" rx="4" fill="#FEF9E7" stroke="#B7950B" stroke-width="1"/>
+  <text x="1069" y="509" text-anchor="middle" font-size="11" fill="#B7950B" font-weight="bold">PLANNED</text>
+
+  <!-- Row 7 — UEBA / Geo Anomaly -->
+  <rect x="30" y="552" width="1140" height="66" fill="#EBF5FB"/>
+  <line x1="30" y1="618" x2="1170" y2="618" stroke="#D6EAF8" stroke-width="1"/>
+  <text x="50" y="577" font-size="13" font-weight="bold" fill="#B7950B">07</text>
+  <text x="80" y="572" font-size="12" font-weight="bold" fill="#17202A">UEBA — Geographic &amp; Behavioral Anomaly Detection</text>
+  <text x="80" y="589" font-size="11" fill="#555">Enable UEBA in SIEM; alert on logins from new countries,</text>
+  <text x="80" y="604" font-size="11" fill="#555">impossible travel, off-hours access, and bulk data access patterns</text>
+  <rect x="359" y="559" width="90" height="22" rx="4" fill="#B7950B"/>
+  <text x="404" y="575" text-anchor="middle" font-size="11" font-weight="bold" fill="white">P3 — MED</text>
+  <text x="462" y="579" font-size="11" fill="#B7950B" font-weight="bold">Month 1</text>
+  <text x="592" y="579" font-size="11" fill="#17202A">SOC / SIEM Team</text>
+  <text x="732" y="572" font-size="11" fill="#17202A">j.mehta login from Russia post-VPN</text>
+  <text x="732" y="588" font-size="11" fill="#555">went undetected for 49 minutes</text>
+  <rect x="1009" y="559" width="120" height="22" rx="4" fill="#FEF9E7" stroke="#B7950B" stroke-width="1"/>
+  <text x="1069" y="575" text-anchor="middle" font-size="11" fill="#B7950B" font-weight="bold">PLANNED</text>
+
+  <!-- Row 8 — Credential Breach Monitor -->
+  <rect x="30" y="618" width="1140" height="66" fill="white"/>
+  <line x1="30" y1="684" x2="1170" y2="684" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="643" font-size="13" font-weight="bold" fill="#B7950B">08</text>
+  <text x="80" y="638" font-size="12" font-weight="bold" fill="#17202A">Credential Breach Monitoring (HIBP Integration)</text>
+  <text x="80" y="655" font-size="11" fill="#555">Integrate HaveIBeenPwned Enterprise API; alert security team</text>
+  <text x="80" y="670" font-size="11" fill="#555">when employee credentials appear in breach databases; force reset</text>
+  <rect x="359" y="625" width="90" height="22" rx="4" fill="#B7950B"/>
+  <text x="404" y="641" text-anchor="middle" font-size="11" font-weight="bold" fill="white">P3 — MED</text>
+  <text x="462" y="645" font-size="11" fill="#B7950B" font-weight="bold">Month 1</text>
+  <text x="592" y="645" font-size="11" fill="#17202A">IAM / SecOps Team</text>
+  <text x="732" y="638" font-size="11" fill="#17202A">j.mehta password in HIBP database</text>
+  <text x="732" y="654" font-size="11" fill="#555">Reused compromised credential exploited</text>
+  <rect x="1009" y="625" width="120" height="22" rx="4" fill="#FEF9E7" stroke="#B7950B" stroke-width="1"/>
+  <text x="1069" y="641" text-anchor="middle" font-size="11" fill="#B7950B" font-weight="bold">PLANNED</text>
+
+  <!-- Row 9 — Phishing Simulation -->
+  <rect x="30" y="684" width="1140" height="66" fill="#EBF5FB"/>
+  <line x1="30" y1="750" x2="1170" y2="750" stroke="#D6EAF8" stroke-width="1"/>
+  <text x="50" y="709" font-size="13" font-weight="bold" fill="#1E8449">09</text>
+  <text x="80" y="704" font-size="12" font-weight="bold" fill="#17202A">Phishing Simulation + Security Awareness Training</text>
+  <text x="80" y="721" font-size="11" fill="#555">Quarterly phishing simulations for all staff; mandatory training</text>
+  <text x="80" y="736" font-size="11" fill="#555">for employees who fail; track click rates over time</text>
+  <rect x="359" y="691" width="90" height="22" rx="4" fill="#1E8449"/>
+  <text x="404" y="707" text-anchor="middle" font-size="11" font-weight="bold" fill="white">P4 — ONG</text>
+  <text x="462" y="711" font-size="11" fill="#1E8449" font-weight="bold">Ongoing</text>
+  <text x="592" y="711" font-size="11" fill="#17202A">HR + Security Team</text>
+  <text x="732" y="704" font-size="11" fill="#17202A">Malicious attachment opened by user</text>
+  <text x="732" y="720" font-size="11" fill="#555">Human factor remains highest-risk vector</text>
+  <rect x="1009" y="691" width="120" height="22" rx="4" fill="#FEF9E7" stroke="#B7950B" stroke-width="1"/>
+  <text x="1069" y="707" text-anchor="middle" font-size="11" fill="#B7950B" font-weight="bold">SCHEDULED</text>
+
+  <!-- Row 10 — IR Plan Review -->
+  <rect x="30" y="750" width="1140" height="66" fill="white"/>
+  <line x1="30" y1="816" x2="1170" y2="816" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="775" font-size="13" font-weight="bold" fill="#1E8449">10</text>
+  <text x="80" y="770" font-size="12" font-weight="bold" fill="#17202A">Incident Response Plan Review &amp; Tabletop Exercises</text>
+  <text x="80" y="787" font-size="11" fill="#555">Review and update IRP every 6 months; conduct annual tabletop</text>
+  <text x="80" y="802" font-size="11" fill="#555">exercise simulating ransomware and exfiltration scenarios</text>
+  <rect x="359" y="757" width="90" height="22" rx="4" fill="#1E8449"/>
+  <text x="404" y="773" text-anchor="middle" font-size="11" font-weight="bold" fill="white">P4 — ONG</text>
+  <text x="462" y="777" font-size="11" fill="#1E8449" font-weight="bold">6-monthly</text>
+  <text x="592" y="777" font-size="11" fill="#17202A">CISO / SOC Lead</text>
+  <text x="732" y="770" font-size="11" fill="#17202A">IRP not tested before incident</text>
+  <text x="732" y="786" font-size="11" fill="#555">Response time could be improved further</text>
+  <rect x="1009" y="757" width="120" height="22" rx="4" fill="#D5F5E3" stroke="#1E8449" stroke-width="1"/>
+  <text x="1069" y="773" text-anchor="middle" font-size="11" fill="#1E8449" font-weight="bold">SCHEDULED</text>
+
+  <!-- Outer border -->
+  <rect x="30" y="122" width="1140" height="694" fill="none" stroke="#BDC3C7" stroke-width="1.5"/>
+
+  <!-- Column dividers full height -->
+  <line x1="72"  y1="156" x2="72"  y2="816" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="355" y1="156" x2="355" y2="816" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="455" y1="156" x2="455" y2="816" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="585" y1="156" x2="585" y2="816" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="725" y1="156" x2="725" y2="816" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="1005" y1="156" x2="1005" y2="816" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- ══ IMPLEMENTATION ROADMAP ══ -->
+  <rect x="30" y="830" width="1140" height="34" rx="4" fill="#0D2B45"/>
+  <text x="50" y="852" font-size="14" font-weight="bold" fill="white">Implementation Roadmap</text>
+
+  <!-- Timeline bar -->
+  <rect x="30" y="864" width="1140" height="200" rx="5" fill="white" stroke="#BDC3C7" stroke-width="1" filter="url(#sh)"/>
+
+  <!-- Phases -->
+  <rect x="50"  y="880" width="260" height="40" rx="5" fill="#FDECEA" stroke="#C0392B" stroke-width="2"/>
+  <text x="180" y="898" text-anchor="middle" font-size="12" font-weight="bold" fill="#C0392B">IMMEDIATE — 24–48h</text>
+  <text x="180" y="912" text-anchor="middle" font-size="11" fill="#555">Controls 01, 02, 03</text>
+
+  <rect x="330" y="880" width="260" height="40" rx="5" fill="#FDEBD0" stroke="#E67E22" stroke-width="2"/>
+  <text x="460" y="898" text-anchor="middle" font-size="12" font-weight="bold" fill="#E67E22">WEEK 1–2</text>
+  <text x="460" y="912" text-anchor="middle" font-size="11" fill="#555">Controls 04, 05, 06</text>
+
+  <rect x="610" y="880" width="260" height="40" rx="5" fill="#FEF9E7" stroke="#B7950B" stroke-width="2"/>
+  <text x="740" y="898" text-anchor="middle" font-size="12" font-weight="bold" fill="#B7950B">MONTH 1</text>
+  <text x="740" y="912" text-anchor="middle" font-size="11" fill="#555">Controls 07, 08</text>
+
+  <rect x="890" y="880" width="260" height="40" rx="5" fill="#D5F5E3" stroke="#1E8449" stroke-width="2"/>
+  <text x="1020" y="898" text-anchor="middle" font-size="12" font-weight="bold" fill="#1E8449">ONGOING</text>
+  <text x="1020" y="912" text-anchor="middle" font-size="11" fill="#555">Controls 09, 10</text>
+
+  <!-- Progress bar -->
+  <text x="50" y="945" font-size="11" font-weight="bold" fill="#5D6D7E">Overall Implementation Progress:</text>
+  <rect x="50" y="953" width="1100" height="18" rx="4" fill="#E8E8E8"/>
+  <rect x="50" y="953" width="176" height="18" rx="4" fill="#C0392B"/>
+  <text x="140" y="966" text-anchor="middle" font-size="10" font-weight="bold" fill="white">16% COMPLETE</text>
+  <text x="1060" y="966" font-size="10" fill="#888">2/10 controls implemented</text>
+
+  <!-- KPI Row -->
+  <text x="50"  y="1000" font-size="11" font-weight="bold" fill="#1A4A6E">Target KPIs After Implementation:</text>
+  <rect x="50"  y="1008" width="260" height="42" rx="4" fill="#EBF5FB" stroke="#1A4A6E" stroke-width="1"/>
+  <text x="180" y="1025" text-anchor="middle" font-size="11" font-weight="bold" fill="#1A4A6E">Mean Time to Detect (MTTD)</text>
+  <text x="180" y="1041" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F6FA0">Current: 35min → Target: &lt;10min</text>
+
+  <rect x="330" y="1008" width="260" height="42" rx="4" fill="#EBF5FB" stroke="#1A4A6E" stroke-width="1"/>
+  <text x="460" y="1025" text-anchor="middle" font-size="11" font-weight="bold" fill="#1A4A6E">Mean Time to Contain (MTTC)</text>
+  <text x="460" y="1041" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F6FA0">Current: 6h42m → Target: &lt;2h</text>
+
+  <rect x="610" y="1008" width="260" height="42" rx="4" fill="#D5F5E3" stroke="#1E8449" stroke-width="1"/>
+  <text x="740" y="1025" text-anchor="middle" font-size="11" font-weight="bold" fill="#1A5E20">Phishing Click Rate</text>
+  <text x="740" y="1041" text-anchor="middle" font-size="13" font-weight="bold" fill="#1E8449">Target: &lt;5% after Q2 training</text>
+
+  <rect x="890" y="1008" width="260" height="42" rx="4" fill="#D5F5E3" stroke="#1E8449" stroke-width="1"/>
+  <text x="1020" y="1025" text-anchor="middle" font-size="11" font-weight="bold" fill="#1A5E20">Repeat Incidents (same vector)</text>
+  <text x="1020" y="1041" text-anchor="middle" font-size="13" font-weight="bold" fill="#1E8449">Target: 0 after MFA rollout</text>
+
+  <!-- Footer -->
+  <rect x="0" y="1128" width="1200" height="32" fill="#F0F3F8"/>
+  <line x1="0" y1="1128" x2="1200" y2="1128" stroke="#BDC3C7" stroke-width="1"/>
+  <text x="600" y="1149" text-anchor="middle" font-size="10" fill="#888">Post-Incident Preventive Action Plan · INC-2026-0312 · NovaTech Systems Ltd. · March 2026 · CONFIDENTIAL — Security Operations Center</text>
+</svg>

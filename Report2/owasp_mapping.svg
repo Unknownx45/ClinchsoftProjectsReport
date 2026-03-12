@@ -1,0 +1,267 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1020" font-family="Arial, sans-serif">
+  <defs>
+    <filter id="sh" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#00000022"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1020" fill="#F4F6F9"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="64" fill="#0D2137"/>
+  <text x="600" y="34" text-anchor="middle" font-size="21" font-weight="bold" fill="white">OWASP Top 10 (2021) — Risk Mapping Table</text>
+  <text x="600" y="54" text-anchor="middle" font-size="12" fill="#90C0F0">PortalX Web Application Security Audit  |  March 2026  |  14 Findings Mapped</text>
+
+  <!-- OWASP legend bar -->
+  <rect x="30" y="74" width="1140" height="40" rx="6" fill="white" stroke="#BDC3C7" stroke-width="1" filter="url(#sh)"/>
+  <text x="50" y="98" font-size="12" font-weight="bold" fill="#0D2137">OWASP 2021 Coverage: </text>
+  <rect x="210" y="83" width="12" height="12" rx="2" fill="#C0392B"/>
+  <text x="228" y="96" font-size="11" fill="#333">A01 Broken Access Control</text>
+  <rect x="400" y="83" width="12" height="12" rx="2" fill="#1A5276"/>
+  <text x="418" y="96" font-size="11" fill="#333">A02 Crypto Failures</text>
+  <rect x="560" y="83" width="12" height="12" rx="2" fill="#D35400"/>
+  <text x="578" y="96" font-size="11" fill="#333">A03 Injection</text>
+  <rect x="680" y="83" width="12" height="12" rx="2" fill="#6C3483"/>
+  <text x="698" y="96" font-size="11" fill="#333">A04 Insecure Design</text>
+  <rect x="850" y="83" width="12" height="12" rx="2" fill="#148F77"/>
+  <text x="868" y="96" font-size="11" fill="#333">A05 Misconfiguration</text>
+  <rect x="1030" y="83" width="12" height="12" rx="2" fill="#B7950B"/>
+  <text x="1048" y="96" font-size="11" fill="#333">A06–A10</text>
+
+  <!-- Table header -->
+  <rect x="30" y="123" width="1140" height="36" fill="#0D2137"/>
+  <text x="50" y="146" font-size="12" font-weight="bold" fill="white">ID</text>
+  <text x="100" y="146" font-size="12" font-weight="bold" fill="white">Vulnerability</text>
+  <text x="330" y="146" font-size="12" font-weight="bold" fill="white">OWASP Category</text>
+  <text x="580" y="146" font-size="12" font-weight="bold" fill="white">Severity</text>
+  <text x="680" y="146" font-size="12" font-weight="bold" fill="white">Potential Impact</text>
+  <text x="880" y="146" font-size="12" font-weight="bold" fill="white">Attack Vector</text>
+
+  <!-- Dividers in header -->
+  <line x1="95" y1="123" x2="95" y2="159" stroke="#1A5276" stroke-width="1"/>
+  <line x1="325" y1="123" x2="325" y2="159" stroke="#1A5276" stroke-width="1"/>
+  <line x1="575" y1="123" x2="575" y2="159" stroke="#1A5276" stroke-width="1"/>
+  <line x1="675" y1="123" x2="675" y2="159" stroke="#1A5276" stroke-width="1"/>
+  <line x1="875" y1="123" x2="875" y2="159" stroke="#1A5276" stroke-width="1"/>
+
+  <!-- Row data: [id, vuln, owasp_tag, owasp_color, severity, sev_bg, sev_tc, impact, vector, row_bg] -->
+
+  <!-- VF-01 -->
+  <rect x="30" y="159" width="1140" height="52" fill="#FDECEA"/>
+  <line x1="30" y1="211" x2="1170" y2="211" stroke="#F5B7B1" stroke-width="1"/>
+  <text x="50" y="181" font-size="12" font-weight="bold" fill="#C0392B">VF-01</text>
+  <text x="100" y="178" font-size="12" fill="#17202A">SQL Injection</text>
+  <text x="100" y="196" font-size="11" fill="#888">Login endpoint — email param</text>
+  <rect x="329" y="165" width="240" height="22" rx="4" fill="#D35400"/>
+  <text x="449" y="181" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A03:2021 — Injection</text>
+  <rect x="579" y="165" width="90" height="22" rx="4" fill="#C0392B"/>
+  <text x="624" y="181" text-anchor="middle" font-size="11" font-weight="bold" fill="white">CRITICAL</text>
+  <text x="678" y="178" font-size="11" fill="#17202A">Auth bypass, full DB dump,</text>
+  <text x="678" y="194" font-size="11" fill="#17202A">data destruction</text>
+  <text x="878" y="185" font-size="11" fill="#17202A">Network — web form</text>
+
+  <!-- VF-02 -->
+  <rect x="30" y="211" width="1140" height="52" fill="white"/>
+  <line x1="30" y1="263" x2="1170" y2="263" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="233" font-size="12" font-weight="bold" fill="#C0392B">VF-02</text>
+  <text x="100" y="230" font-size="12" fill="#17202A">Stored XSS</text>
+  <text x="100" y="248" font-size="11" fill="#888">Profile bio / display name fields</text>
+  <rect x="329" y="217" width="240" height="22" rx="4" fill="#D35400"/>
+  <text x="449" y="233" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A03:2021 — Injection</text>
+  <rect x="579" y="217" width="90" height="22" rx="4" fill="#C0392B"/>
+  <text x="624" y="233" text-anchor="middle" font-size="11" font-weight="bold" fill="white">CRITICAL</text>
+  <text x="678" y="230" font-size="11" fill="#17202A">Session hijack, mass account</text>
+  <text x="678" y="246" font-size="11" fill="#17202A">takeover, credential theft</text>
+  <text x="878" y="237" font-size="11" fill="#17202A">Network — persistent</text>
+
+  <!-- VF-03 -->
+  <rect x="30" y="263" width="1140" height="52" fill="#FDECEA"/>
+  <line x1="30" y1="315" x2="1170" y2="315" stroke="#F5B7B1" stroke-width="1"/>
+  <text x="50" y="285" font-size="12" font-weight="bold" fill="#E67E22">VF-03</text>
+  <text x="100" y="282" font-size="12" fill="#17202A">Broken Authentication</text>
+  <text x="100" y="300" font-size="11" fill="#888">JWT / session / password reset</text>
+  <rect x="329" y="269" width="240" height="22" rx="4" fill="#E67E22"/>
+  <text x="449" y="285" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A07:2021 — Auth Failures</text>
+  <rect x="579" y="269" width="90" height="22" rx="4" fill="#E67E22"/>
+  <text x="624" y="285" text-anchor="middle" font-size="11" font-weight="bold" fill="white">HIGH</text>
+  <text x="678" y="282" font-size="11" fill="#17202A">Unauthorized access, account</text>
+  <text x="678" y="298" font-size="11" fill="#17202A">takeover via brute force</text>
+  <text x="878" y="289" font-size="11" fill="#17202A">Network — remote</text>
+
+  <!-- VF-04 -->
+  <rect x="30" y="315" width="1140" height="52" fill="white"/>
+  <line x1="30" y1="367" x2="1170" y2="367" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="337" font-size="12" font-weight="bold" fill="#E67E22">VF-04</text>
+  <text x="100" y="334" font-size="12" fill="#17202A">Unrestricted File Upload</text>
+  <text x="100" y="352" font-size="11" fill="#888">Avatar upload endpoint</text>
+  <rect x="329" y="321" width="240" height="22" rx="4" fill="#6C3483"/>
+  <text x="449" y="337" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A04:2021 — Insecure Design</text>
+  <rect x="579" y="321" width="90" height="22" rx="4" fill="#E67E22"/>
+  <text x="624" y="337" text-anchor="middle" font-size="11" font-weight="bold" fill="white">HIGH</text>
+  <text x="678" y="334" font-size="11" fill="#17202A">Remote Code Execution,</text>
+  <text x="678" y="350" font-size="11" fill="#17202A">server compromise</text>
+  <text x="878" y="341" font-size="11" fill="#17202A">Network — file upload</text>
+
+  <!-- VF-05 -->
+  <rect x="30" y="367" width="1140" height="52" fill="#FDECEA"/>
+  <line x1="30" y1="419" x2="1170" y2="419" stroke="#F5B7B1" stroke-width="1"/>
+  <text x="50" y="389" font-size="12" font-weight="bold" fill="#E67E22">VF-05</text>
+  <text x="100" y="386" font-size="12" fill="#17202A">Broken Access Control (IDOR)</text>
+  <text x="100" y="404" font-size="11" fill="#888">User data API endpoints</text>
+  <rect x="329" y="373" width="240" height="22" rx="4" fill="#C0392B"/>
+  <text x="449" y="389" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A01:2021 — Broken Access</text>
+  <rect x="579" y="373" width="90" height="22" rx="4" fill="#E67E22"/>
+  <text x="624" y="389" text-anchor="middle" font-size="11" font-weight="bold" fill="white">HIGH</text>
+  <text x="678" y="386" font-size="11" fill="#17202A">Any user accesses any other</text>
+  <text x="678" y="402" font-size="11" fill="#17202A">user's private data</text>
+  <text x="878" y="393" font-size="11" fill="#17202A">Network — API manipulation</text>
+
+  <!-- VF-06 -->
+  <rect x="30" y="419" width="1140" height="52" fill="white"/>
+  <line x1="30" y1="471" x2="1170" y2="471" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="441" font-size="12" font-weight="bold" fill="#B7950B">VF-06</text>
+  <text x="100" y="438" font-size="12" fill="#17202A">Missing Security Headers</text>
+  <text x="100" y="456" font-size="11" fill="#888">All HTTP responses — CSP, HSTS absent</text>
+  <rect x="329" y="425" width="240" height="22" rx="4" fill="#148F77"/>
+  <text x="449" y="441" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A05:2021 — Misconfiguration</text>
+  <rect x="579" y="425" width="90" height="22" rx="4" fill="#B7950B"/>
+  <text x="624" y="441" text-anchor="middle" font-size="11" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="678" y="438" font-size="11" fill="#17202A">Clickjacking, XSS amplification,</text>
+  <text x="678" y="454" font-size="11" fill="#17202A">MIME sniffing attacks</text>
+  <text x="878" y="445" font-size="11" fill="#17202A">Network — browser-based</text>
+
+  <!-- VF-07 -->
+  <rect x="30" y="471" width="1140" height="52" fill="#EBF5FB"/>
+  <line x1="30" y1="523" x2="1170" y2="523" stroke="#D6EAF8" stroke-width="1"/>
+  <text x="50" y="493" font-size="12" font-weight="bold" fill="#B7950B">VF-07</text>
+  <text x="100" y="490" font-size="12" fill="#17202A">Sensitive Data Exposure</text>
+  <text x="100" y="508" font-size="11" fill="#888">MD5 passwords, PII in logs, errors</text>
+  <rect x="329" y="477" width="240" height="22" rx="4" fill="#1A5276"/>
+  <text x="449" y="493" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A02:2021 — Crypto Failures</text>
+  <rect x="579" y="477" width="90" height="22" rx="4" fill="#B7950B"/>
+  <text x="624" y="493" text-anchor="middle" font-size="11" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="678" y="490" font-size="11" fill="#17202A">Mass credential theft,</text>
+  <text x="678" y="506" font-size="11" fill="#17202A">PII data breach, compliance risk</text>
+  <text x="878" y="497" font-size="11" fill="#17202A">Network / physical</text>
+
+  <!-- VF-08 -->
+  <rect x="30" y="523" width="1140" height="52" fill="white"/>
+  <line x1="30" y1="575" x2="1170" y2="575" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="545" font-size="12" font-weight="bold" fill="#B7950B">VF-08</text>
+  <text x="100" y="542" font-size="12" fill="#17202A">No CSRF Protection</text>
+  <text x="100" y="560" font-size="11" fill="#888">State-changing forms and API calls</text>
+  <rect x="329" y="529" width="240" height="22" rx="4" fill="#C0392B"/>
+  <text x="449" y="545" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A01:2021 — Broken Access</text>
+  <rect x="579" y="529" width="90" height="22" rx="4" fill="#B7950B"/>
+  <text x="624" y="545" text-anchor="middle" font-size="11" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="678" y="542" font-size="11" fill="#17202A">Forged requests on behalf of</text>
+  <text x="678" y="558" font-size="11" fill="#17202A">authenticated users</text>
+  <text x="878" y="549" font-size="11" fill="#17202A">Network — cross-site</text>
+
+  <!-- VF-09 -->
+  <rect x="30" y="575" width="1140" height="52" fill="#EBF5FB"/>
+  <line x1="30" y1="627" x2="1170" y2="627" stroke="#D6EAF8" stroke-width="1"/>
+  <text x="50" y="597" font-size="12" font-weight="bold" fill="#B7950B">VF-09</text>
+  <text x="100" y="594" font-size="12" fill="#17202A">No Rate Limiting</text>
+  <text x="100" y="612" font-size="11" fill="#888">Login, register, password reset</text>
+  <rect x="329" y="581" width="240" height="22" rx="4" fill="#E67E22"/>
+  <text x="449" y="597" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A07:2021 — Auth Failures</text>
+  <rect x="579" y="581" width="90" height="22" rx="4" fill="#B7950B"/>
+  <text x="624" y="597" text-anchor="middle" font-size="11" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="678" y="594" font-size="11" fill="#17202A">Brute-force credential stuffing,</text>
+  <text x="678" y="610" font-size="11" fill="#17202A">account enumeration</text>
+  <text x="878" y="601" font-size="11" fill="#17202A">Network — automated</text>
+
+  <!-- VF-10 -->
+  <rect x="30" y="627" width="1140" height="52" fill="white"/>
+  <line x1="30" y1="679" x2="1170" y2="679" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="649" font-size="12" font-weight="bold" fill="#B7950B">VF-10</text>
+  <text x="100" y="646" font-size="12" fill="#17202A">Vulnerable Dependencies</text>
+  <text x="100" y="664" font-size="11" fill="#888">axios, lodash, multer — HIGH CVEs</text>
+  <rect x="329" y="633" width="240" height="22" rx="4" fill="#6C3483"/>
+  <text x="449" y="649" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A06:2021 — Vuln. Components</text>
+  <rect x="579" y="633" width="90" height="22" rx="4" fill="#B7950B"/>
+  <text x="624" y="649" text-anchor="middle" font-size="11" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="678" y="646" font-size="11" fill="#17202A">Known exploits for installed</text>
+  <text x="678" y="662" font-size="11" fill="#17202A">library versions</text>
+  <text x="878" y="653" font-size="11" fill="#17202A">Network — supply chain</text>
+
+  <!-- VF-11 -->
+  <rect x="30" y="679" width="1140" height="52" fill="#FDECEA"/>
+  <line x1="30" y1="731" x2="1170" y2="731" stroke="#F5B7B1" stroke-width="1"/>
+  <text x="50" y="701" font-size="12" font-weight="bold" fill="#E67E22">VF-11</text>
+  <text x="100" y="698" font-size="12" fill="#17202A">Weak Password Storage (MD5)</text>
+  <text x="100" y="716" font-size="11" fill="#888">User passwords hashed without salt</text>
+  <rect x="329" y="685" width="240" height="22" rx="4" fill="#1A5276"/>
+  <text x="449" y="701" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A02:2021 — Crypto Failures</text>
+  <rect x="579" y="685" width="90" height="22" rx="4" fill="#E67E22"/>
+  <text x="624" y="701" text-anchor="middle" font-size="11" font-weight="bold" fill="white">HIGH</text>
+  <text x="678" y="698" font-size="11" fill="#17202A">All passwords cracked in minutes</text>
+  <text x="678" y="714" font-size="11" fill="#17202A">via rainbow table attack</text>
+  <text x="878" y="705" font-size="11" fill="#17202A">Physical / insider / breach</text>
+
+  <!-- VF-12 -->
+  <rect x="30" y="731" width="1140" height="52" fill="white"/>
+  <line x1="30" y1="783" x2="1170" y2="783" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="753" font-size="12" font-weight="bold" fill="#B7950B">VF-12</text>
+  <text x="100" y="750" font-size="12" fill="#17202A">HTTPS Not Enforced</text>
+  <text x="100" y="768" font-size="11" fill="#888">Some API routes permit HTTP</text>
+  <rect x="329" y="737" width="240" height="22" rx="4" fill="#1A5276"/>
+  <text x="449" y="753" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A02:2021 — Crypto Failures</text>
+  <rect x="579" y="737" width="90" height="22" rx="4" fill="#B7950B"/>
+  <text x="624" y="753" text-anchor="middle" font-size="11" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="678" y="750" font-size="11" fill="#17202A">Session token interception via</text>
+  <text x="678" y="766" font-size="11" fill="#17202A">man-in-the-middle attack</text>
+  <text x="878" y="757" font-size="11" fill="#17202A">Adjacent / network</text>
+
+  <!-- VF-13 -->
+  <rect x="30" y="783" width="1140" height="52" fill="#EBF5FB"/>
+  <line x1="30" y1="835" x2="1170" y2="835" stroke="#D6EAF8" stroke-width="1"/>
+  <text x="50" y="805" font-size="12" font-weight="bold" fill="#27AE60">VF-13</text>
+  <text x="100" y="802" font-size="12" fill="#17202A">Error Information Disclosure</text>
+  <text x="100" y="820" font-size="11" fill="#888">Stack traces in API error responses</text>
+  <rect x="329" y="789" width="240" height="22" rx="4" fill="#148F77"/>
+  <text x="449" y="805" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A05:2021 — Misconfiguration</text>
+  <rect x="579" y="789" width="90" height="22" rx="4" fill="#27AE60"/>
+  <text x="624" y="805" text-anchor="middle" font-size="11" font-weight="bold" fill="white">LOW</text>
+  <text x="678" y="802" font-size="11" fill="#17202A">Reveals file paths, DB schema,</text>
+  <text x="678" y="818" font-size="11" fill="#17202A">aids attacker reconnaissance</text>
+  <text x="878" y="809" font-size="11" fill="#17202A">Network — passive recon</text>
+
+  <!-- VF-14 -->
+  <rect x="30" y="835" width="1140" height="52" fill="white"/>
+  <line x1="30" y1="887" x2="1170" y2="887" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="50" y="857" font-size="12" font-weight="bold" fill="#27AE60">VF-14</text>
+  <text x="100" y="854" font-size="12" fill="#17202A">Debug Mode Enabled in Production</text>
+  <text x="100" y="872" font-size="11" fill="#888">NODE_ENV=development in prod config</text>
+  <rect x="329" y="841" width="240" height="22" rx="4" fill="#148F77"/>
+  <text x="449" y="857" text-anchor="middle" font-size="11" font-weight="bold" fill="white">A05:2021 — Misconfiguration</text>
+  <rect x="579" y="841" width="90" height="22" rx="4" fill="#27AE60"/>
+  <text x="624" y="857" text-anchor="middle" font-size="11" font-weight="bold" fill="white">LOW</text>
+  <text x="678" y="854" font-size="11" fill="#17202A">Exposes internal config, verbose</text>
+  <text x="678" y="870" font-size="11" fill="#17202A">errors, debug endpoints</text>
+  <text x="878" y="861" font-size="11" fill="#17202A">Network — passive recon</text>
+
+  <!-- Outer table border -->
+  <rect x="30" y="123" width="1140" height="764" fill="none" stroke="#BDC3C7" stroke-width="1.5"/>
+
+  <!-- Column dividers (full) -->
+  <line x1="95" y1="159" x2="95" y2="887" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="325" y1="159" x2="325" y2="887" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="575" y1="159" x2="575" y2="887" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="675" y1="159" x2="675" y2="887" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="875" y1="159" x2="875" y2="887" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Summary bar -->
+  <rect x="30" y="895" width="1140" height="52" rx="6" fill="#0D2137" filter="url(#sh)"/>
+  <text x="50" y="916" font-size="12" font-weight="bold" fill="white">OWASP Categories Hit: </text>
+  <text x="220" y="916" font-size="11" fill="#90C0F0">A01 (2 findings)  |  A02 (3 findings)  |  A03 (2 findings)  |  A04 (1 finding)  |  A05 (3 findings)  |  A06 (1 finding)  |  A07 (2 findings)</text>
+  <text x="50" y="935" font-size="11" fill="#90C0F0">Severity: 2 Critical · 4 High · 6 Medium · 2 Low  |  Overall Risk: HIGH — NOT READY FOR PUBLIC LAUNCH</text>
+  <text x="50" y="952" font-size="10" fill="#5D8AA8">Framework: OWASP Top 10 2021 | CVSS v3.1 | PortalX Web Application Audit | March 2026 | CONFIDENTIAL</text>
+
+  <!-- Footer -->
+  <rect x="0" y="968" width="1200" height="52" fill="#F0F3F8"/>
+  <line x1="0" y1="968" x2="1200" y2="968" stroke="#BDC3C7" stroke-width="1"/>
+  <text x="600" y="990" text-anchor="middle" font-size="11" fill="#5D6D7E" font-weight="bold">OWASP Top 10 2021 Reference</text>
+  <text x="600" y="1008" text-anchor="middle" font-size="10" fill="#888">A01 Broken Access Control · A02 Cryptographic Failures · A03 Injection · A04 Insecure Design · A05 Security Misconfiguration · A06 Vulnerable Components · A07 Auth Failures · A08 Integrity Failures · A09 Logging Failures · A10 SSRF</text>
+</svg>

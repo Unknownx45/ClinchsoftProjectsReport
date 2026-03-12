@@ -1,0 +1,277 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1360" font-family="Arial, sans-serif">
+  <defs>
+    <filter id="sh" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#00000022"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1360" fill="#F4F6F9"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="64" fill="#0D2137"/>
+  <text x="600" y="34" text-anchor="middle" font-size="21" font-weight="bold" fill="white">Web Application Security — Recommendation Checklist</text>
+  <text x="600" y="54" text-anchor="middle" font-size="12" fill="#90C0F0">PortalX Pre-Launch Security Hardening  |  March 2026  |  47 Action Items Across 8 Categories</text>
+
+  <!-- Status legend -->
+  <rect x="30" y="74" width="1140" height="38" rx="6" fill="white" stroke="#BDC3C7" stroke-width="1" filter="url(#sh)"/>
+  <text x="50" y="97" font-size="12" font-weight="bold" fill="#0D2137">Checklist Status: </text>
+  <rect x="180" y="83" width="14" height="14" rx="2" fill="#C0392B"/>
+  <text x="200" y="97" font-size="11" fill="#333">☐ MANDATORY — Block launch</text>
+  <rect x="420" y="83" width="14" height="14" rx="2" fill="#E67E22"/>
+  <text x="440" y="97" font-size="11" fill="#333">☐ HIGH — Fix week 1</text>
+  <rect x="600" y="83" width="14" height="14" rx="2" fill="#B7950B"/>
+  <text x="620" y="97" font-size="11" fill="#333">☐ RECOMMENDED — Fix month 1</text>
+  <rect x="850" y="83" width="14" height="14" rx="2" fill="#1E8449"/>
+  <text x="870" y="97" font-size="11" fill="#333">☐ BEST PRACTICE — Ongoing</text>
+
+  <!-- ══ SECTION 1: Input Validation ══ -->
+  <rect x="30" y="124" width="1140" height="34" rx="4" fill="#0D2137"/>
+  <text x="50" y="146" font-size="14" font-weight="bold" fill="white">1 — Input Validation &amp; Injection Prevention</text>
+
+  <!-- items -->
+  <rect x="30" y="158" width="1140" height="28" fill="#FDECEA"/>
+  <rect x="50" y="165" width="16" height="16" rx="3" fill="white" stroke="#C0392B" stroke-width="2"/>
+  <text x="78" y="177" font-size="12" fill="#17202A">Use parameterized queries / prepared statements for ALL database interactions — never string-concatenate user input into SQL</text>
+  <rect x="1130" y="163" width="32" height="18" rx="4" fill="#C0392B"/>
+  <text x="1146" y="176" text-anchor="middle" font-size="9" font-weight="bold" fill="white">MAND</text>
+
+  <rect x="30" y="186" width="1140" height="28" fill="white"/>
+  <rect x="50" y="193" width="16" height="16" rx="3" fill="white" stroke="#C0392B" stroke-width="2"/>
+  <text x="78" y="205" font-size="12" fill="#17202A">Sanitize all HTML output with DOMPurify before rendering — never use dangerouslySetInnerHTML with raw user data</text>
+  <rect x="1130" y="191" width="32" height="18" rx="4" fill="#C0392B"/>
+  <text x="1146" y="204" text-anchor="middle" font-size="9" font-weight="bold" fill="white">MAND</text>
+
+  <rect x="30" y="214" width="1140" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="221" width="16" height="16" rx="3" fill="white" stroke="#E67E22" stroke-width="2"/>
+  <text x="78" y="233" font-size="12" fill="#17202A">Implement server-side input validation on ALL endpoints using validator.js or Joi — client-side checks alone are insufficient</text>
+  <rect x="1130" y="219" width="32" height="18" rx="4" fill="#E67E22"/>
+  <text x="1146" y="232" text-anchor="middle" font-size="9" font-weight="bold" fill="white">HIGH</text>
+
+  <rect x="30" y="242" width="1140" height="28" fill="white"/>
+  <rect x="50" y="249" width="16" height="16" rx="3" fill="white" stroke="#E67E22" stroke-width="2"/>
+  <text x="78" y="261" font-size="12" fill="#17202A">Apply allowlist validation: define and enforce expected data type, format, length, and character set for every input field</text>
+  <rect x="1130" y="247" width="32" height="18" rx="4" fill="#E67E22"/>
+  <text x="1146" y="260" text-anchor="middle" font-size="9" font-weight="bold" fill="white">HIGH</text>
+
+  <rect x="30" y="270" width="1140" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="277" width="16" height="16" rx="3" fill="white" stroke="#B7950B" stroke-width="2"/>
+  <text x="78" y="289" font-size="12" fill="#17202A">Consider migrating to a type-safe ORM (Prisma, TypeORM) which enforces parameterization by design</text>
+  <rect x="1130" y="275" width="32" height="18" rx="4" fill="#B7950B"/>
+  <text x="1146" y="288" text-anchor="middle" font-size="9" font-weight="bold" fill="white">REC</text>
+
+  <!-- ══ SECTION 2: Authentication ══ -->
+  <rect x="30" y="310" width="1140" height="34" rx="4" fill="#1A5276"/>
+  <text x="50" y="332" font-size="14" font-weight="bold" fill="white">2 — Authentication &amp; Session Management</text>
+
+  <rect x="30" y="344" width="1140" height="28" fill="#FDECEA"/>
+  <rect x="50" y="351" width="16" height="16" rx="3" fill="white" stroke="#C0392B" stroke-width="2"/>
+  <text x="78" y="363" font-size="12" fill="#17202A">Replace MD5 with bcrypt (cost factor ≥ 12) or Argon2id for all password hashing — re-hash existing passwords on next login</text>
+  <rect x="1130" y="349" width="32" height="18" rx="4" fill="#C0392B"/>
+  <text x="1146" y="362" text-anchor="middle" font-size="9" font-weight="bold" fill="white">MAND</text>
+
+  <rect x="30" y="372" width="1140" height="28" fill="white"/>
+  <rect x="50" y="379" width="16" height="16" rx="3" fill="white" stroke="#C0392B" stroke-width="2"/>
+  <text x="78" y="391" font-size="12" fill="#17202A">Move JWT secret to environment variable; use cryptographically random 256-bit key; validate exp claim on every request</text>
+  <rect x="1130" y="377" width="32" height="18" rx="4" fill="#C0392B"/>
+  <text x="1146" y="390" text-anchor="middle" font-size="9" font-weight="bold" fill="white">MAND</text>
+
+  <rect x="30" y="400" width="1140" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="407" width="16" height="16" rx="3" fill="white" stroke="#E67E22" stroke-width="2"/>
+  <text x="78" y="419" font-size="12" fill="#17202A">Implement account lockout: 5 failed attempts → 15-minute lockout with exponential backoff; alert user by email</text>
+  <rect x="1130" y="405" width="32" height="18" rx="4" fill="#E67E22"/>
+  <text x="1146" y="418" text-anchor="middle" font-size="9" font-weight="bold" fill="white">HIGH</text>
+
+  <rect x="30" y="428" width="1140" height="28" fill="white"/>
+  <rect x="50" y="435" width="16" height="16" rx="3" fill="white" stroke="#E67E22" stroke-width="2"/>
+  <text x="78" y="447" font-size="12" fill="#17202A">Set all session cookies: HttpOnly; Secure; SameSite=Strict — prevents JavaScript access and cross-site transmission</text>
+  <rect x="1130" y="433" width="32" height="18" rx="4" fill="#E67E22"/>
+  <text x="1146" y="446" text-anchor="middle" font-size="9" font-weight="bold" fill="white">HIGH</text>
+
+  <rect x="30" y="456" width="1140" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="463" width="16" height="16" rx="3" fill="white" stroke="#E67E22" stroke-width="2"/>
+  <text x="78" y="475" font-size="12" fill="#17202A">Invalidate session tokens server-side on logout and password change; implement refresh token rotation</text>
+  <rect x="1130" y="461" width="32" height="18" rx="4" fill="#E67E22"/>
+  <text x="1146" y="474" text-anchor="middle" font-size="9" font-weight="bold" fill="white">HIGH</text>
+
+  <rect x="30" y="484" width="1140" height="28" fill="white"/>
+  <rect x="50" y="491" width="16" height="16" rx="3" fill="white" stroke="#B7950B" stroke-width="2"/>
+  <text x="78" y="503" font-size="12" fill="#17202A">Offer TOTP-based MFA (Google Authenticator compatible) as a user option; enforce for admin accounts</text>
+  <rect x="1130" y="489" width="32" height="18" rx="4" fill="#B7950B"/>
+  <text x="1146" y="502" text-anchor="middle" font-size="9" font-weight="bold" fill="white">REC</text>
+
+  <!-- ══ SECTION 3: Access Control ══ -->
+  <rect x="30" y="524" width="1140" height="34" rx="4" fill="#1A5276"/>
+  <text x="50" y="546" font-size="14" font-weight="bold" fill="white">3 — Access Control &amp; Authorization</text>
+
+  <rect x="30" y="558" width="1140" height="28" fill="#FDECEA"/>
+  <rect x="50" y="565" width="16" height="16" rx="3" fill="white" stroke="#C0392B" stroke-width="2"/>
+  <text x="78" y="577" font-size="12" fill="#17202A">Add server-side ownership check on EVERY resource endpoint: verify req.user.id matches the requested resource owner</text>
+  <rect x="1130" y="563" width="32" height="18" rx="4" fill="#C0392B"/>
+  <text x="1146" y="576" text-anchor="middle" font-size="9" font-weight="bold" fill="white">MAND</text>
+
+  <rect x="30" y="586" width="1140" height="28" fill="white"/>
+  <rect x="50" y="593" width="16" height="16" rx="3" fill="white" stroke="#E67E22" stroke-width="2"/>
+  <text x="78" y="605" font-size="12" fill="#17202A">Replace sequential integer IDs with UUIDs for all user-facing resource identifiers to prevent enumeration</text>
+  <rect x="1130" y="591" width="32" height="18" rx="4" fill="#E67E22"/>
+  <text x="1146" y="604" text-anchor="middle" font-size="9" font-weight="bold" fill="white">HIGH</text>
+
+  <rect x="30" y="614" width="1140" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="621" width="16" height="16" rx="3" fill="white" stroke="#B7950B" stroke-width="2"/>
+  <text x="78" y="633" font-size="12" fill="#17202A">Implement RBAC with clearly defined roles (user, admin, moderator); apply deny-by-default on all routes</text>
+  <rect x="1130" y="619" width="32" height="18" rx="4" fill="#B7950B"/>
+  <text x="1146" y="632" text-anchor="middle" font-size="9" font-weight="bold" fill="white">REC</text>
+
+  <rect x="30" y="642" width="1140" height="28" fill="white"/>
+  <rect x="50" y="649" width="16" height="16" rx="3" fill="white" stroke="#1E8449" stroke-width="2"/>
+  <text x="78" y="661" font-size="12" fill="#17202A">Log all access control failures with user ID, endpoint, timestamp; alert on anomalous access patterns</text>
+  <rect x="1130" y="647" width="32" height="18" rx="4" fill="#1E8449"/>
+  <text x="1146" y="660" text-anchor="middle" font-size="9" font-weight="bold" fill="white">BP</text>
+
+  <!-- ══ SECTION 4: File Upload ══ -->
+  <rect x="30" y="682" width="1140" height="34" rx="4" fill="#1A5276"/>
+  <text x="50" y="704" font-size="14" font-weight="bold" fill="white">4 — File Upload Security</text>
+
+  <rect x="30" y="716" width="1140" height="28" fill="#FDECEA"/>
+  <rect x="50" y="723" width="16" height="16" rx="3" fill="white" stroke="#C0392B" stroke-width="2"/>
+  <text x="78" y="735" font-size="12" fill="#17202A">Validate MIME type server-side by reading file magic bytes — never trust the Content-Type header or file extension alone</text>
+  <rect x="1130" y="721" width="32" height="18" rx="4" fill="#C0392B"/>
+  <text x="1146" y="734" text-anchor="middle" font-size="9" font-weight="bold" fill="white">MAND</text>
+
+  <rect x="30" y="744" width="1140" height="28" fill="white"/>
+  <rect x="50" y="751" width="16" height="16" rx="3" fill="white" stroke="#E67E22" stroke-width="2"/>
+  <text x="78" y="763" font-size="12" fill="#17202A">Re-encode all uploads through Sharp (images) — this strips embedded payloads and normalizes the file</text>
+  <rect x="1130" y="749" width="32" height="18" rx="4" fill="#E67E22"/>
+  <text x="1146" y="762" text-anchor="middle" font-size="9" font-weight="bold" fill="white">HIGH</text>
+
+  <rect x="30" y="772" width="1140" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="779" width="16" height="16" rx="3" fill="white" stroke="#E67E22" stroke-width="2"/>
+  <text x="78" y="791" font-size="12" fill="#17202A">Rename uploads to a random UUID; store outside web root or in S3 with no public execute permissions</text>
+  <rect x="1130" y="777" width="32" height="18" rx="4" fill="#E67E22"/>
+  <text x="1146" y="790" text-anchor="middle" font-size="9" font-weight="bold" fill="white">HIGH</text>
+
+  <rect x="30" y="800" width="1140" height="28" fill="white"/>
+  <rect x="50" y="807" width="16" height="16" rx="3" fill="white" stroke="#B7950B" stroke-width="2"/>
+  <text x="78" y="819" font-size="12" fill="#17202A">Enforce file size limits (2MB), allowlisted MIME types (image/jpeg, image/png, image/webp), and max upload frequency</text>
+  <rect x="1130" y="805" width="32" height="18" rx="4" fill="#B7950B"/>
+  <text x="1146" y="818" text-anchor="middle" font-size="9" font-weight="bold" fill="white">REC</text>
+
+  <!-- ══ SECTION 5: Security Headers & Config ══ -->
+  <rect x="30" y="840" width="1140" height="34" rx="4" fill="#1A5276"/>
+  <text x="50" y="862" font-size="14" font-weight="bold" fill="white">5 — Security Headers &amp; Server Configuration</text>
+
+  <rect x="30" y="874" width="1140" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="881" width="16" height="16" rx="3" fill="white" stroke="#E67E22" stroke-width="2"/>
+  <text x="78" y="893" font-size="12" fill="#17202A">Add Content-Security-Policy header: default-src 'self'; script-src 'self' 'nonce-{random}'; object-src 'none'</text>
+  <rect x="1130" y="879" width="32" height="18" rx="4" fill="#E67E22"/>
+  <text x="1146" y="892" text-anchor="middle" font-size="9" font-weight="bold" fill="white">HIGH</text>
+
+  <rect x="30" y="902" width="1140" height="28" fill="white"/>
+  <rect x="50" y="909" width="16" height="16" rx="3" fill="white" stroke="#E67E22" stroke-width="2"/>
+  <text x="78" y="921" font-size="12" fill="#17202A">Add Strict-Transport-Security: max-age=31536000; includeSubDomains; preload — forces all traffic over HTTPS</text>
+  <rect x="1130" y="907" width="32" height="18" rx="4" fill="#E67E22"/>
+  <text x="1146" y="920" text-anchor="middle" font-size="9" font-weight="bold" fill="white">HIGH</text>
+
+  <rect x="30" y="930" width="1140" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="937" width="16" height="16" rx="3" fill="white" stroke="#B7950B" stroke-width="2"/>
+  <text x="78" y="949" font-size="12" fill="#17202A">Add X-Frame-Options: DENY, X-Content-Type-Options: nosniff, Referrer-Policy: strict-origin-when-cross-origin</text>
+  <rect x="1130" y="935" width="32" height="18" rx="4" fill="#B7950B"/>
+  <text x="1146" y="948" text-anchor="middle" font-size="9" font-weight="bold" fill="white">REC</text>
+
+  <rect x="30" y="958" width="1140" height="28" fill="white"/>
+  <rect x="50" y="965" width="16" height="16" rx="3" fill="white" stroke="#B7950B" stroke-width="2"/>
+  <text x="78" y="977" font-size="12" fill="#17202A">Remove Server header; disable X-Powered-By; set NODE_ENV=production; disable debug routes and verbose errors</text>
+  <rect x="1130" y="963" width="32" height="18" rx="4" fill="#B7950B"/>
+  <text x="1146" y="976" text-anchor="middle" font-size="9" font-weight="bold" fill="white">REC</text>
+
+  <rect x="30" y="986" width="1140" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="993" width="16" height="16" rx="3" fill="white" stroke="#B7950B" stroke-width="2"/>
+  <text x="78" y="1005" font-size="12" fill="#17202A">Add CSRF tokens (csurf middleware or Double Submit Cookie) on all state-changing POST/PUT/DELETE forms</text>
+  <rect x="1130" y="991" width="32" height="18" rx="4" fill="#B7950B"/>
+  <text x="1146" y="1004" text-anchor="middle" font-size="9" font-weight="bold" fill="white">REC</text>
+
+  <!-- ══ SECTION 6: API & Rate Limiting ══ -->
+  <rect x="30" y="1026" width="560" height="34" rx="4" fill="#1A5276"/>
+  <text x="50" y="1048" font-size="14" font-weight="bold" fill="white">6 — API Security &amp; Rate Limiting</text>
+
+  <rect x="30" y="1060" width="560" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="1067" width="16" height="16" rx="3" fill="white" stroke="#B7950B" stroke-width="2"/>
+  <text x="78" y="1079" font-size="12" fill="#17202A">Add express-rate-limit to login, register, reset endpoints (max 10/15min)</text>
+  <rect x="560" y="1065" width="22" height="18" rx="3" fill="#B7950B"/>
+  <text x="571" y="1078" text-anchor="middle" font-size="9" font-weight="bold" fill="white">R</text>
+
+  <rect x="30" y="1088" width="560" height="28" fill="white"/>
+  <rect x="50" y="1095" width="16" height="16" rx="3" fill="white" stroke="#1E8449" stroke-width="2"/>
+  <text x="78" y="1107" font-size="12" fill="#17202A">Use HTTPS-only API endpoints; enforce TLS 1.2 minimum</text>
+  <rect x="560" y="1093" width="22" height="18" rx="3" fill="#1E8449"/>
+  <text x="571" y="1106" text-anchor="middle" font-size="9" font-weight="bold" fill="white">B</text>
+
+  <rect x="30" y="1116" width="560" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="1123" width="16" height="16" rx="3" fill="white" stroke="#1E8449" stroke-width="2"/>
+  <text x="78" y="1135" font-size="12" fill="#17202A">Return generic error messages — never expose internal errors to clients</text>
+  <rect x="560" y="1121" width="22" height="18" rx="3" fill="#1E8449"/>
+  <text x="571" y="1134" text-anchor="middle" font-size="9" font-weight="bold" fill="white">B</text>
+
+  <!-- ══ SECTION 7: Dependencies ══ -->
+  <rect x="610" y="1026" width="560" height="34" rx="4" fill="#1A5276"/>
+  <text x="630" y="1048" font-size="14" font-weight="bold" fill="white">7 — Dependencies &amp; Supply Chain</text>
+
+  <rect x="610" y="1060" width="560" height="28" fill="#EBF5FB"/>
+  <rect x="630" y="1067" width="16" height="16" rx="3" fill="white" stroke="#C0392B" stroke-width="2"/>
+  <text x="658" y="1079" font-size="12" fill="#17202A">Run npm audit --fix; patch axios, lodash, multer CVEs now</text>
+  <rect x="1140" y="1065" width="22" height="18" rx="3" fill="#C0392B"/>
+  <text x="1151" y="1078" text-anchor="middle" font-size="9" font-weight="bold" fill="white">M</text>
+
+  <rect x="610" y="1088" width="560" height="28" fill="white"/>
+  <rect x="630" y="1095" width="16" height="16" rx="3" fill="white" stroke="#B7950B" stroke-width="2"/>
+  <text x="658" y="1107" font-size="12" fill="#17202A">Enable Dependabot or Snyk for automated PR alerts on new CVEs</text>
+  <rect x="1140" y="1093" width="22" height="18" rx="3" fill="#B7950B"/>
+  <text x="1151" y="1106" text-anchor="middle" font-size="9" font-weight="bold" fill="white">R</text>
+
+  <rect x="610" y="1116" width="560" height="28" fill="#EBF5FB"/>
+  <rect x="630" y="1123" width="16" height="16" rx="3" fill="white" stroke="#1E8449" stroke-width="2"/>
+  <text x="658" y="1135" font-size="12" fill="#17202A">Pin dependency versions; use lockfile (package-lock.json)</text>
+  <rect x="1140" y="1121" width="22" height="18" rx="3" fill="#1E8449"/>
+  <text x="1151" y="1134" text-anchor="middle" font-size="9" font-weight="bold" fill="white">B</text>
+
+  <!-- ══ SECTION 8: Testing & Monitoring ══ -->
+  <rect x="30" y="1158" width="1140" height="34" rx="4" fill="#0D2137"/>
+  <text x="50" y="1180" font-size="14" font-weight="bold" fill="white">8 — Security Testing &amp; Continuous Monitoring</text>
+
+  <rect x="30" y="1192" width="560" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="1199" width="16" height="16" rx="3" fill="white" stroke="#E67E22" stroke-width="2"/>
+  <text x="78" y="1211" font-size="12" fill="#17202A">Integrate SAST (Semgrep / ESLint-security) in CI/CD pipeline</text>
+
+  <rect x="610" y="1192" width="560" height="28" fill="#EBF5FB"/>
+  <rect x="630" y="1199" width="16" height="16" rx="3" fill="white" stroke="#B7950B" stroke-width="2"/>
+  <text x="658" y="1211" font-size="12" fill="#17202A">Deploy WAF (AWS WAF / Cloudflare) before public launch</text>
+
+  <rect x="30" y="1220" width="560" height="28" fill="white"/>
+  <rect x="50" y="1227" width="16" height="16" rx="3" fill="white" stroke="#B7950B" stroke-width="2"/>
+  <text x="78" y="1239" font-size="12" fill="#17202A">Run OWASP ZAP scan on staging before every release</text>
+
+  <rect x="610" y="1220" width="560" height="28" fill="white"/>
+  <rect x="630" y="1227" width="16" height="16" rx="3" fill="white" stroke="#1E8449" stroke-width="2"/>
+  <text x="658" y="1239" font-size="12" fill="#17202A">Schedule quarterly penetration tests post-launch</text>
+
+  <rect x="30" y="1248" width="560" height="28" fill="#EBF5FB"/>
+  <rect x="50" y="1255" width="16" height="16" rx="3" fill="white" stroke="#1E8449" stroke-width="2"/>
+  <text x="78" y="1267" font-size="12" fill="#17202A">Log auth failures, access violations, anomalous exports</text>
+
+  <rect x="610" y="1248" width="560" height="28" fill="#EBF5FB"/>
+  <rect x="630" y="1255" width="16" height="16" rx="3" fill="white" stroke="#1E8449" stroke-width="2"/>
+  <text x="658" y="1267" font-size="12" fill="#17202A">Publish responsible disclosure / bug bounty policy at launch</text>
+
+  <!-- Divider between cols in sections 6&7 -->
+  <line x1="600" y1="1026" x2="600" y2="1150" stroke="#BDC3C7" stroke-width="1"/>
+
+  <!-- Summary footer -->
+  <rect x="30" y="1288" width="1140" height="46" rx="6" fill="#0D2137" filter="url(#sh)"/>
+  <text x="50" y="1307" font-size="12" font-weight="bold" fill="white">Progress Tracker: </text>
+  <text x="195" y="1307" font-size="12" fill="#90C0F0">Mandatory (MAND): 8 items  |  High (HIGH): 10 items  |  Recommended (REC): 14 items  |  Best Practice (BP): 8+ items</text>
+  <text x="50" y="1325" font-size="11" fill="#90C0F0">All MANDATORY items must be checked ✓ before launch sign-off. MAND + HIGH = minimum viable security baseline.</text>
+
+  <!-- Watermark footer -->
+  <rect x="0" y="1334" width="1200" height="26" fill="#F0F3F8"/>
+  <line x1="0" y1="1334" x2="1200" y2="1334" stroke="#BDC3C7" stroke-width="1"/>
+  <text x="600" y="1351" text-anchor="middle" font-size="10" fill="#888">PortalX Web Application Security Audit · March 2026 · Application Security Division · CONFIDENTIAL</text>
+</svg>

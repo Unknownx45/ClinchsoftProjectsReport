@@ -1,0 +1,323 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1180" font-family="Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#00000022"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="1180" fill="#F4F6F9"/>
+
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="1200" height="62" fill="#1B3A6B"/>
+  <text x="600" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="white">Enterprise Network Security — Risk Register</text>
+  <text x="600" y="52" text-anchor="middle" font-size="12" fill="#90C0F0">Apex Solutions Pvt. Ltd. | March 2026 | CONFIDENTIAL | Threat → Impact → Mitigation</text>
+
+  <!-- Risk Matrix Legend -->
+  <rect x="30" y="75" width="1140" height="38" rx="6" fill="white" stroke="#BDC3C7" stroke-width="1" filter="url(#shadow)"/>
+  <text x="50" y="97" font-size="12" font-weight="bold" fill="#1B3A6B">Risk Level: </text>
+  <rect x="132" y="82" width="14" height="14" fill="#FDECEA" stroke="#C0392B" stroke-width="1.5" rx="2"/>
+  <text x="152" y="95" font-size="12" fill="#C0392B" font-weight="bold">CRITICAL</text>
+  <rect x="250" y="82" width="14" height="14" fill="#FEF3E2" stroke="#E67E22" stroke-width="1.5" rx="2"/>
+  <text x="270" y="95" font-size="12" fill="#E67E22" font-weight="bold">HIGH</text>
+  <rect x="340" y="82" width="14" height="14" fill="#FEFAE0" stroke="#B7950B" stroke-width="1.5" rx="2"/>
+  <text x="360" y="95" font-size="12" fill="#B7950B" font-weight="bold">MEDIUM</text>
+  <rect x="450" y="82" width="14" height="14" fill="#D5F0DC" stroke="#27AE60" stroke-width="1.5" rx="2"/>
+  <text x="470" y="95" font-size="12" fill="#27AE60" font-weight="bold">LOW</text>
+  <text x="560" y="95" font-size="11" fill="#888">  |  Risk Score = Likelihood × Impact  |  18 findings across 4 severity levels</text>
+
+  <!-- ══ TABLE HEADER ══ -->
+  <rect x="30" y="122" width="1140" height="34" rx="0" fill="#1B3A6B"/>
+  <!-- Col widths: 30|250|120|120|100|520 = 1140 -->
+  <text x="48" y="144" font-size="12" font-weight="bold" fill="white">#</text>
+  <text x="85" y="144" font-size="12" font-weight="bold" fill="white">Threat / Vulnerability</text>
+  <text x="340" y="144" font-size="12" font-weight="bold" fill="white">Likelihood</text>
+  <text x="465" y="144" font-size="12" font-weight="bold" fill="white">Impact</text>
+  <text x="590" y="144" font-size="12" font-weight="bold" fill="white">Risk</text>
+  <text x="695" y="144" font-size="12" font-weight="bold" fill="white">Recommended Mitigation</text>
+
+  <!-- Column dividers in header -->
+  <line x1="75" y1="122" x2="75" y2="156" stroke="#2E5FA3" stroke-width="1"/>
+  <line x1="330" y1="122" x2="330" y2="156" stroke="#2E5FA3" stroke-width="1"/>
+  <line x1="455" y1="122" x2="455" y2="156" stroke="#2E5FA3" stroke-width="1"/>
+  <line x1="580" y1="122" x2="580" y2="156" stroke="#2E5FA3" stroke-width="1"/>
+  <line x1="680" y1="122" x2="680" y2="156" stroke="#2E5FA3" stroke-width="1"/>
+
+  <!-- ══ ROWS ══ -->
+  <!-- Row height: 50px each. Start y=156 -->
+
+  <!-- Macro to define rows: [#, threat, likelihood, impact, risk, mitigation] -->
+  <!-- CRITICAL rows -->
+
+  <!-- Row 1 -->
+  <rect x="30" y="156" width="1140" height="48" fill="#FDECEA"/>
+  <line x1="30" y1="204" x2="1170" y2="204" stroke="#F5B7B1" stroke-width="1"/>
+  <text x="48" y="176" font-size="12" font-weight="bold" fill="#C0392B">1</text>
+  <text x="85" y="173" font-size="12" fill="#1A1A2E">Internet-Facing RDP (Port 3389)</text>
+  <text x="85" y="190" font-size="11" fill="#555">BlueKeep patches missing</text>
+  <text x="340" y="180" font-size="12" fill="#C0392B" font-weight="bold">Very High</text>
+  <text x="465" y="180" font-size="12" fill="#C0392B" font-weight="bold">Critical</text>
+  <rect x="584" y="162" width="88" height="26" rx="4" fill="#C0392B"/>
+  <text x="628" y="180" text-anchor="middle" font-size="12" font-weight="bold" fill="white">CRITICAL</text>
+  <text x="695" y="173" font-size="11" fill="#1A1A2E">Block at perimeter firewall; enforce VPN-only RDP;</text>
+  <text x="695" y="188" font-size="11" fill="#1A1A2E">apply BlueKeep patches immediately</text>
+
+  <!-- Row 2 -->
+  <rect x="30" y="204" width="1140" height="48" fill="white"/>
+  <line x1="30" y1="252" x2="1170" y2="252" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="48" y="224" font-size="12" font-weight="bold" fill="#C0392B">2</text>
+  <text x="85" y="221" font-size="12" fill="#1A1A2E">SMBv1 Enabled on Network Shares</text>
+  <text x="85" y="238" font-size="11" fill="#555">EternalBlue / WannaCry attack vector</text>
+  <text x="340" y="228" font-size="12" fill="#C0392B" font-weight="bold">High</text>
+  <text x="465" y="228" font-size="12" fill="#C0392B" font-weight="bold">Critical</text>
+  <rect x="584" y="210" width="88" height="26" rx="4" fill="#C0392B"/>
+  <text x="628" y="228" text-anchor="middle" font-size="12" font-weight="bold" fill="white">CRITICAL</text>
+  <text x="695" y="221" font-size="11" fill="#1A1A2E">Disable SMBv1 on all Windows systems;</text>
+  <text x="695" y="236" font-size="11" fill="#1A1A2E">enforce SMB signing; patch all hosts</text>
+
+  <!-- Row 3 -->
+  <rect x="30" y="252" width="1140" height="48" fill="#FDECEA"/>
+  <line x1="30" y1="300" x2="1170" y2="300" stroke="#F5B7B1" stroke-width="1"/>
+  <text x="48" y="272" font-size="12" font-weight="bold" fill="#C0392B">3</text>
+  <text x="85" y="269" font-size="12" fill="#1A1A2E">Telnet Enabled on Network Devices</text>
+  <text x="85" y="286" font-size="11" fill="#555">Cleartext credentials in transit</text>
+  <text x="340" y="276" font-size="12" fill="#C0392B" font-weight="bold">High</text>
+  <text x="465" y="276" font-size="12" fill="#C0392B" font-weight="bold">High</text>
+  <rect x="584" y="258" width="88" height="26" rx="4" fill="#C0392B"/>
+  <text x="628" y="276" text-anchor="middle" font-size="12" font-weight="bold" fill="white">CRITICAL</text>
+  <text x="695" y="269" font-size="11" fill="#1A1A2E">Disable Telnet on all devices;</text>
+  <text x="695" y="284" font-size="11" fill="#1A1A2E">enforce SSH v2 with key-based auth only</text>
+
+  <!-- HIGH rows -->
+
+  <!-- Row 4 -->
+  <rect x="30" y="300" width="1140" height="48" fill="white"/>
+  <line x1="30" y1="348" x2="1170" y2="348" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="48" y="320" font-size="12" font-weight="bold" fill="#E67E22">4</text>
+  <text x="85" y="317" font-size="12" fill="#1A1A2E">No MFA on VPN / Remote Access</text>
+  <text x="85" y="334" font-size="11" fill="#555">Single-factor auth exposed to brute force</text>
+  <text x="340" y="324" font-size="12" fill="#E67E22" font-weight="bold">High</text>
+  <text x="465" y="324" font-size="12" fill="#E67E22" font-weight="bold">High</text>
+  <rect x="584" y="306" width="88" height="26" rx="4" fill="#E67E22"/>
+  <text x="628" y="324" text-anchor="middle" font-size="12" font-weight="bold" fill="white">HIGH</text>
+  <text x="695" y="317" font-size="11" fill="#1A1A2E">Deploy TOTP/FIDO2 MFA for all remote access;</text>
+  <text x="695" y="332" font-size="11" fill="#1A1A2E">enforce via VPN gateway policy</text>
+
+  <!-- Row 5 -->
+  <rect x="30" y="348" width="1140" height="48" fill="#FEF3E2"/>
+  <line x1="30" y1="396" x2="1170" y2="396" stroke="#FAD7A0" stroke-width="1"/>
+  <text x="48" y="368" font-size="12" font-weight="bold" fill="#E67E22">5</text>
+  <text x="85" y="365" font-size="12" fill="#1A1A2E">15 Stale Active Directory Accounts</text>
+  <text x="85" y="382" font-size="11" fill="#555">Former employees; attack surface for credential abuse</text>
+  <text x="340" y="372" font-size="12" fill="#E67E22" font-weight="bold">Medium</text>
+  <text x="465" y="372" font-size="12" fill="#E67E22" font-weight="bold">High</text>
+  <rect x="584" y="354" width="88" height="26" rx="4" fill="#E67E22"/>
+  <text x="628" y="372" text-anchor="middle" font-size="12" font-weight="bold" fill="white">HIGH</text>
+  <text x="695" y="365" font-size="11" fill="#1A1A2E">Disable all inactive accounts immediately;</text>
+  <text x="695" y="380" font-size="11" fill="#1A1A2E">automate offboarding workflow</text>
+
+  <!-- Row 6 -->
+  <rect x="30" y="396" width="1140" height="48" fill="white"/>
+  <line x1="30" y1="444" x2="1170" y2="444" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="48" y="416" font-size="12" font-weight="bold" fill="#E67E22">6</text>
+  <text x="85" y="413" font-size="12" fill="#1A1A2E">Default Credentials on Network Switches</text>
+  <text x="85" y="430" font-size="11" fill="#555">admin/cisco on 2+ managed switches</text>
+  <text x="340" y="420" font-size="12" fill="#E67E22" font-weight="bold">High</text>
+  <text x="465" y="420" font-size="12" fill="#E67E22" font-weight="bold">Medium</text>
+  <rect x="584" y="402" width="88" height="26" rx="4" fill="#E67E22"/>
+  <text x="628" y="420" text-anchor="middle" font-size="12" font-weight="bold" fill="white">HIGH</text>
+  <text x="695" y="413" font-size="11" fill="#1A1A2E">Rotate all default credentials; apply</text>
+  <text x="695" y="428" font-size="11" fill="#1A1A2E">device hardening baseline (CIS Benchmarks)</text>
+
+  <!-- Row 7 -->
+  <rect x="30" y="444" width="1140" height="48" fill="#FEF3E2"/>
+  <line x1="30" y1="492" x2="1170" y2="492" stroke="#FAD7A0" stroke-width="1"/>
+  <text x="48" y="464" font-size="12" font-weight="bold" fill="#E67E22">7</text>
+  <text x="85" y="461" font-size="12" fill="#1A1A2E">Flat LAN — No East-West Traffic Controls</text>
+  <text x="85" y="478" font-size="11" fill="#555">Unrestricted lateral movement once inside perimeter</text>
+  <text x="340" y="468" font-size="12" fill="#E67E22" font-weight="bold">Medium</text>
+  <text x="465" y="468" font-size="12" fill="#E67E22" font-weight="bold">High</text>
+  <rect x="584" y="450" width="88" height="26" rx="4" fill="#E67E22"/>
+  <text x="628" y="468" text-anchor="middle" font-size="12" font-weight="bold" fill="white">HIGH</text>
+  <text x="695" y="461" font-size="11" fill="#1A1A2E">Implement VLANs and micro-segmentation;</text>
+  <text x="695" y="476" font-size="11" fill="#1A1A2E">enforce firewall ACLs between all segments</text>
+
+  <!-- Row 8 -->
+  <rect x="30" y="492" width="1140" height="48" fill="white"/>
+  <line x1="30" y1="540" x2="1170" y2="540" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="48" y="512" font-size="12" font-weight="bold" fill="#E67E22">8</text>
+  <text x="85" y="509" font-size="12" fill="#1A1A2E">No SIEM / Centralized Log Aggregation</text>
+  <text x="85" y="526" font-size="11" fill="#555">Attacks undetected; no forensic baseline</text>
+  <text x="340" y="516" font-size="12" fill="#E67E22" font-weight="bold">High</text>
+  <text x="465" y="516" font-size="12" fill="#E67E22" font-weight="bold">Medium</text>
+  <rect x="584" y="498" width="88" height="26" rx="4" fill="#E67E22"/>
+  <text x="628" y="516" text-anchor="middle" font-size="12" font-weight="bold" fill="white">HIGH</text>
+  <text x="695" y="509" font-size="11" fill="#1A1A2E">Deploy SIEM (Wazuh / Splunk); aggregate logs</text>
+  <text x="695" y="524" font-size="11" fill="#1A1A2E">from firewall, AD, endpoints, and web servers</text>
+
+  <!-- Row 9 -->
+  <rect x="30" y="540" width="1140" height="48" fill="#FEF3E2"/>
+  <line x1="30" y1="588" x2="1170" y2="588" stroke="#FAD7A0" stroke-width="1"/>
+  <text x="48" y="560" font-size="12" font-weight="bold" fill="#E67E22">9</text>
+  <text x="85" y="557" font-size="12" fill="#1A1A2E">No Endpoint Detection and Response (EDR)</text>
+  <text x="85" y="574" font-size="11" fill="#555">Malware/ransomware goes undetected on hosts</text>
+  <text x="340" y="564" font-size="12" fill="#E67E22" font-weight="bold">Medium</text>
+  <text x="465" y="564" font-size="12" fill="#E67E22" font-weight="bold">High</text>
+  <rect x="584" y="546" width="88" height="26" rx="4" fill="#E67E22"/>
+  <text x="628" y="564" text-anchor="middle" font-size="12" font-weight="bold" fill="white">HIGH</text>
+  <text x="695" y="557" font-size="11" fill="#1A1A2E">Deploy EDR on all endpoints</text>
+  <text x="695" y="572" font-size="11" fill="#1A1A2E">(e.g., CrowdStrike Falcon, MS Defender ATP)</text>
+
+  <!-- MEDIUM rows -->
+
+  <!-- Row 10 -->
+  <rect x="30" y="588" width="1140" height="48" fill="white"/>
+  <line x1="30" y1="636" x2="1170" y2="636" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="48" y="608" font-size="12" font-weight="bold" fill="#B7950B">10</text>
+  <text x="85" y="605" font-size="12" fill="#1A1A2E">Corporate Wi-Fi Using WPA2-PSK</text>
+  <text x="85" y="622" font-size="11" fill="#555">No certificate-based auth; shared password risk</text>
+  <text x="340" y="612" font-size="12" fill="#B7950B" font-weight="bold">Medium</text>
+  <text x="465" y="612" font-size="12" fill="#B7950B" font-weight="bold">Medium</text>
+  <rect x="584" y="594" width="88" height="26" rx="4" fill="#B7950B"/>
+  <text x="628" y="612" text-anchor="middle" font-size="12" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="695" y="605" font-size="11" fill="#1A1A2E">Migrate to WPA3-Enterprise with 802.1X</text>
+  <text x="695" y="620" font-size="11" fill="#1A1A2E">and RADIUS authentication</text>
+
+  <!-- Row 11 -->
+  <rect x="30" y="636" width="1140" height="48" fill="#FEFAE0"/>
+  <line x1="30" y1="684" x2="1170" y2="684" stroke="#F9E79F" stroke-width="1"/>
+  <text x="48" y="656" font-size="12" font-weight="bold" fill="#B7950B">11</text>
+  <text x="85" y="653" font-size="12" fill="#1A1A2E">No Wireless IPS (WIPS)</text>
+  <text x="85" y="670" font-size="11" fill="#555">Rogue APs and evil twin attacks undetected</text>
+  <text x="340" y="660" font-size="12" fill="#B7950B" font-weight="bold">Medium</text>
+  <text x="465" y="660" font-size="12" fill="#B7950B" font-weight="bold">Medium</text>
+  <rect x="584" y="642" width="88" height="26" rx="4" fill="#B7950B"/>
+  <text x="628" y="660" text-anchor="middle" font-size="12" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="695" y="653" font-size="11" fill="#1A1A2E">Enable WIPS on wireless LAN controller;</text>
+  <text x="695" y="668" font-size="11" fill="#1A1A2E">deploy dedicated rogue AP detection sensors</text>
+
+  <!-- Row 12 -->
+  <rect x="30" y="684" width="1140" height="48" fill="white"/>
+  <line x1="30" y1="732" x2="1170" y2="732" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="48" y="704" font-size="12" font-weight="bold" fill="#B7950B">12</text>
+  <text x="85" y="701" font-size="12" fill="#1A1A2E">TLS 1.0 / 1.1 Active on Web Server</text>
+  <text x="85" y="718" font-size="11" fill="#555">Vulnerable to POODLE, BEAST, and downgrade attacks</text>
+  <text x="340" y="708" font-size="12" fill="#B7950B" font-weight="bold">Low</text>
+  <text x="465" y="708" font-size="12" fill="#B7950B" font-weight="bold">Medium</text>
+  <rect x="584" y="690" width="88" height="26" rx="4" fill="#B7950B"/>
+  <text x="628" y="708" text-anchor="middle" font-size="12" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="695" y="701" font-size="11" fill="#1A1A2E">Disable TLS 1.0/1.1; enforce TLS 1.2 minimum</text>
+  <text x="695" y="716" font-size="11" fill="#1A1A2E">with strong cipher suites only</text>
+
+  <!-- Row 13 -->
+  <rect x="30" y="732" width="1140" height="48" fill="#FEFAE0"/>
+  <line x1="30" y1="780" x2="1170" y2="780" stroke="#F9E79F" stroke-width="1"/>
+  <text x="48" y="752" font-size="12" font-weight="bold" fill="#B7950B">13</text>
+  <text x="85" y="749" font-size="12" fill="#1A1A2E">Dev/Test Server Exposed on Port 8080</text>
+  <text x="85" y="766" font-size="11" fill="#555">Unpatched public-facing test environment</text>
+  <text x="340" y="756" font-size="12" fill="#B7950B" font-weight="bold">Medium</text>
+  <text x="465" y="756" font-size="12" fill="#B7950B" font-weight="bold">Medium</text>
+  <rect x="584" y="738" width="88" height="26" rx="4" fill="#B7950B"/>
+  <text x="628" y="756" text-anchor="middle" font-size="12" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="695" y="749" font-size="11" fill="#1A1A2E">Move to isolated internal VLAN;</text>
+  <text x="695" y="764" font-size="11" fill="#1A1A2E">block public access at perimeter firewall</text>
+
+  <!-- Row 14 -->
+  <rect x="30" y="780" width="1140" height="48" fill="white"/>
+  <line x1="30" y1="828" x2="1170" y2="828" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="48" y="800" font-size="12" font-weight="bold" fill="#B7950B">14</text>
+  <text x="85" y="797" font-size="12" fill="#1A1A2E">Log Retention Only 14 Days</text>
+  <text x="85" y="814" font-size="11" fill="#555">Insufficient for incident forensics or breach investigation</text>
+  <text x="340" y="804" font-size="12" fill="#B7950B" font-weight="bold">Medium</text>
+  <text x="465" y="804" font-size="12" fill="#B7950B" font-weight="bold">Low</text>
+  <rect x="584" y="786" width="88" height="26" rx="4" fill="#B7950B"/>
+  <text x="628" y="804" text-anchor="middle" font-size="12" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="695" y="797" font-size="11" fill="#1A1A2E">Extend to 90+ days hot, 1 year cold archive;</text>
+  <text x="695" y="812" font-size="11" fill="#1A1A2E">use compressed cold storage for cost efficiency</text>
+
+  <!-- Row 15 -->
+  <rect x="30" y="828" width="1140" height="48" fill="#FEFAE0"/>
+  <line x1="30" y1="876" x2="1170" y2="876" stroke="#F9E79F" stroke-width="1"/>
+  <text x="48" y="848" font-size="12" font-weight="bold" fill="#B7950B">15</text>
+  <text x="85" y="845" font-size="12" fill="#1A1A2E">No Network IDS/IPS Deployed</text>
+  <text x="85" y="862" font-size="11" fill="#555">No inspection of inbound exploits or east-west movement</text>
+  <text x="340" y="852" font-size="12" fill="#B7950B" font-weight="bold">Medium</text>
+  <text x="465" y="852" font-size="12" fill="#B7950B" font-weight="bold">Medium</text>
+  <rect x="584" y="834" width="88" height="26" rx="4" fill="#B7950B"/>
+  <text x="628" y="852" text-anchor="middle" font-size="12" font-weight="bold" fill="white">MEDIUM</text>
+  <text x="695" y="845" font-size="11" fill="#1A1A2E">Deploy Suricata/Snort IDS at edge and core;</text>
+  <text x="695" y="860" font-size="11" fill="#1A1A2E">integrate alerts with SIEM platform</text>
+
+  <!-- LOW rows -->
+
+  <!-- Row 16 -->
+  <rect x="30" y="876" width="1140" height="48" fill="white"/>
+  <line x1="30" y1="924" x2="1170" y2="924" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="48" y="896" font-size="12" font-weight="bold" fill="#27AE60">16</text>
+  <text x="85" y="893" font-size="12" fill="#1A1A2E">Guest Wi-Fi — No Client Isolation</text>
+  <text x="85" y="910" font-size="11" fill="#555">Guest-to-guest and limited guest-to-internal routing possible</text>
+  <text x="340" y="900" font-size="12" fill="#27AE60" font-weight="bold">Low</text>
+  <text x="465" y="900" font-size="12" fill="#27AE60" font-weight="bold">Low</text>
+  <rect x="584" y="882" width="88" height="26" rx="4" fill="#27AE60"/>
+  <text x="628" y="900" text-anchor="middle" font-size="12" font-weight="bold" fill="white">LOW</text>
+  <text x="695" y="893" font-size="11" fill="#1A1A2E">Enable AP client isolation on guest SSID;</text>
+  <text x="695" y="908" font-size="11" fill="#1A1A2E">review and tighten guest VLAN firewall rules</text>
+
+  <!-- Row 17 -->
+  <rect x="30" y="924" width="1140" height="48" fill="#D5F0DC"/>
+  <line x1="30" y1="972" x2="1170" y2="972" stroke="#A9DFBF" stroke-width="1"/>
+  <text x="48" y="944" font-size="12" font-weight="bold" fill="#27AE60">17</text>
+  <text x="85" y="941" font-size="12" fill="#1A1A2E">HTTP Not Fully Redirected to HTTPS</text>
+  <text x="85" y="958" font-size="11" fill="#555">Some pages reachable over cleartext HTTP</text>
+  <text x="340" y="948" font-size="12" fill="#27AE60" font-weight="bold">Low</text>
+  <text x="465" y="948" font-size="12" fill="#27AE60" font-weight="bold">Low</text>
+  <rect x="584" y="930" width="88" height="26" rx="4" fill="#27AE60"/>
+  <text x="628" y="948" text-anchor="middle" font-size="12" font-weight="bold" fill="white">LOW</text>
+  <text x="695" y="941" font-size="11" fill="#1A1A2E">Enforce 301 redirect HTTP → HTTPS;</text>
+  <text x="695" y="956" font-size="11" fill="#1A1A2E">add HSTS header with 1-year max-age</text>
+
+  <!-- Row 18 -->
+  <rect x="30" y="972" width="1140" height="48" fill="white"/>
+  <line x1="30" y1="1020" x2="1170" y2="1020" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="48" y="992" font-size="12" font-weight="bold" fill="#27AE60">18</text>
+  <text x="85" y="989" font-size="12" fill="#1A1A2E">Privileged Accounts Used for Daily Tasks</text>
+  <text x="85" y="1006" font-size="11" fill="#555">Domain Admin used on workstations; blast radius risk</text>
+  <text x="340" y="996" font-size="12" fill="#27AE60" font-weight="bold">Medium</text>
+  <text x="465" y="996" font-size="12" fill="#27AE60" font-weight="bold">Low</text>
+  <rect x="584" y="978" width="88" height="26" rx="4" fill="#27AE60"/>
+  <text x="628" y="996" text-anchor="middle" font-size="12" font-weight="bold" fill="white">LOW</text>
+  <text x="695" y="989" font-size="11" fill="#1A1A2E">Enforce Privileged Access Workstations (PAW);</text>
+  <text x="695" y="1004" font-size="11" fill="#1A1A2E">separate daily-use and admin accounts</text>
+
+  <!-- Table outer border -->
+  <rect x="30" y="122" width="1140" height="898" fill="none" stroke="#BDC3C7" stroke-width="1.5"/>
+
+  <!-- Column dividers (full height) -->
+  <line x1="75" y1="156" x2="75" y2="1020" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="330" y1="156" x2="330" y2="1020" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="455" y1="156" x2="455" y2="1020" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="580" y1="156" x2="580" y2="1020" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="680" y1="156" x2="680" y2="1020" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Summary Bar -->
+  <rect x="30" y="1030" width="1140" height="50" rx="6" fill="#1B3A6B" filter="url(#shadow)"/>
+  <text x="50" y="1052" font-size="12" font-weight="bold" fill="white">Summary: </text>
+  <rect x="140" y="1038" width="12" height="12" fill="#C0392B" rx="2"/>
+  <text x="158" y="1051" font-size="12" fill="white">3 Critical</text>
+  <rect x="280" y="1038" width="12" height="12" fill="#E67E22" rx="2"/>
+  <text x="298" y="1051" font-size="12" fill="white">6 High</text>
+  <rect x="400" y="1038" width="12" height="12" fill="#B7950B" rx="2"/>
+  <text x="418" y="1051" font-size="12" fill="white">6 Medium</text>
+  <rect x="540" y="1038" width="12" height="12" fill="#27AE60" rx="2"/>
+  <text x="558" y="1051" font-size="12" fill="white">3 Low</text>
+  <text x="680" y="1051" font-size="11" fill="#90C0F0">|  Overall Risk Rating: HIGH  |  Immediate action required on rows 1–3</text>
+  <text x="50" y="1069" font-size="11" fill="#90C0F0">Prioritize: RDP block → SMBv1 disable → Telnet disable → MFA rollout → SIEM deployment  |  Target: all Critical resolved within 48 hours</text>
+
+  <!-- Footer -->
+  <rect x="0" y="1092" width="1200" height="88" fill="#F0F3F8"/>
+  <line x1="0" y1="1092" x2="1200" y2="1092" stroke="#BDC3C7" stroke-width="1"/>
+  <text x="600" y="1115" text-anchor="middle" font-size="11" fill="#5D6D7E" font-weight="bold">Risk Scoring Matrix Reference</text>
+  <text x="600" y="1132" text-anchor="middle" font-size="11" fill="#888">Likelihood:  Very High = near certain  |  High = probable  |  Medium = possible  |  Low = unlikely</text>
+  <text x="600" y="1148" text-anchor="middle" font-size="11" fill="#888">Impact:  Critical = business-ending / data breach  |  High = major disruption  |  Medium = significant  |  Low = minor</text>
+  <text x="600" y="1165" text-anchor="middle" font-size="10" fill="#AAA">Apex Solutions Network Security Assessment | March 2026 | CONFIDENTIAL — For internal use only</text>
+</svg>
